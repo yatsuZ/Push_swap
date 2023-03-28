@@ -1,8 +1,7 @@
 # Push_swap
 
-<p align="center">
-    <img  src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/push_swape.png" alt="Logo du projet push swap">
-</p>
+![Logo du projet push swap](https://github.com/mcombeau/mcombeau/blob/main/42_badges/push_swape.png)
+
 Push_swap est un projet de l'école 42 qui consiste à trier une pile d'entiers en utilisant un nombre limité d'opérations. Le but de ce projet est d'optimiser le nombre d'opérations nécessaires pour trier la pile.
 
 ## Installation
