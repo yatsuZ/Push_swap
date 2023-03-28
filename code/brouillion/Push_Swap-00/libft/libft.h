@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:31:45 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/27 18:51:36 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/03/28 18:54:12 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdio.h>
+
+//////////////////////////////////// STRUCTURE
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+/////////////////////////////////// LIBFT
 
 size_t	ft_strlen(const char *cha);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
@@ -59,7 +64,7 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 
-///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////// LIBFT-BONUS
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
@@ -71,14 +76,27 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
-///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////// PRINTF
 
-int	ft_printf(const char *str, ...);
-int	ft_printchar(char c);
-int	ft_printstr(char *str);
-int	ft_printptr(void *add);
-int	ft_prnbr(long n, char *base, long len);
-int	ft_prexa(unsigned int n, char *base, unsigned int len);
-int	ft_prptr(unsigned long n, char *base, unsigned long len);
+int		ft_printf(const char *str, ...);
+int		ft_printchar(char c);
+int		ft_printstr(char *str);
+int		ft_printptr(void *add);
+int		ft_prnbr(long n, char *base, long len);
+int		ft_prexa(unsigned int n, char *base, unsigned int len);
+int		ft_prptr(unsigned long n, char *base, unsigned long len);
+
+////////////////////////////////////////////////// GNL
+
+char	*get_next_line(int fd);
+char	*ft_strdup2(char *s, int option);
+char	*ft_strjoin2(char *s1, char *s2);
+int		ft_strlen_or_findendl(char *s, int option);
+void	*ft_calloc2(int nmemb, int size);
+char	*ft_memcpy2(char *dest, char *src, int n);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 #endif
