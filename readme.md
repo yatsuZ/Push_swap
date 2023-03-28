@@ -41,6 +41,7 @@ La note dépend de l'efficacité du processus de tri du programme.
 - Tri 3 valeurs : pas plus de 3 actions.
 - Tri 5 valeurs : pas plus de 12 actions.
 - Tri de 100 valeurs : notation de 1 à 5 points deprend du nombre d'actions.
+
 | Nombre de point | Score à avoir        |
 | --------------- | -------------------- |
 | 5 point         | moin de   700 action |
@@ -50,6 +51,7 @@ La note dépend de l'efficacité du processus de tri du programme.
 | 1 point         | moin de 1 500 action |
 
 - Tri de 500 valeurs : notation de 1 à 5 points deprend du nombre d'actions.
+
 | Nombre de point | Score à avoir         |
 | --------------- | --------------------- |
 | 5 point         | moin de  5 500 action |
