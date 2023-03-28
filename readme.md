@@ -14,6 +14,11 @@ Donc c'est un  projet basé sur l'algoritmy (c'est ce que j'aime dans le code :h
 
 Pas encore notée.
 
+## Comment ai je proceder ?
+
+Si vous voulez savoir comment j'ai cree push swap.
+regarder ce fichier md -> [Creation du push swap de yassine](Creation_du_projet.md).
+
 ## Règle Push_Swap et classement
 
 Le programme n'est autorisé à travailler qu'avec deux piles,
