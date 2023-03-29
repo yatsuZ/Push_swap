@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:31:45 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/28 18:54:12 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/03/29 14:46:55 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,5 @@ char	*ft_strjoin2(char *s1, char *s2);
 int		ft_strlen_or_findendl(char *s, int option);
 void	*ft_calloc2(int nmemb, int size);
 char	*ft_memcpy2(char *dest, char *src, int n);
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
 
 #endif

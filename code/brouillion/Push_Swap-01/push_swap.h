@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 13:54:37 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/03/29 18:31:38 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,25 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-// Cree la structur des pile a b
-typedef struct s_pile_ab
+// Cree la structur d'un mayon
+typedef struct s_mayon
 {
-	long	*tab;
-	long	len;
-	size_t	seperateur;
-}	t_pile_ab;
+	int				val;
+	size_t			index;
+	size_t			position;
+	struct s_mayon	*next;
+	struct s_mayon	*previous;
+}	t_mayon;
+
+// Cree la structur contenant les 2 pile
+typedef struct s_pile
+{
+	struct s_mayon	*a;
+	struct s_mayon	*b;
+	size_t			len_a;
+	size_t			len_b;
+	size_t			len_total;
+}	t_pile;
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- Affichage
 
@@ -33,8 +45,8 @@ void		affichage_argc_argv(size_t z, int argc, char **argv);
 
 int			error(int id_verif, void *element);
 
-//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- Cheker
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- Parsing
 
-t_pile_ab	*cheker(size_t i, int argc, char **argv);
+t_mayon		*parsing(size_t i, int argc, char **argv);
 
 #endif
