@@ -72,6 +72,8 @@ Le bonus consiste de faire son propre cheker comme "checker_linux" ou
 Il consistera a verifier que liste d'instruction permetra de bien trier
 la pile.
 
+## **!! PAS ENCORE FINI DONC LA DEUXIEME PARTIE PAS ENCORE VALIDE !!**
+
 ----------------------------------------
 
 ## Installation
