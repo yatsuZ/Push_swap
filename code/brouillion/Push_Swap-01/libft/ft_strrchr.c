@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cheker.c                                           :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yzaoui <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:42:51 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/11/13 17:53:17 by yzaoui            #+#    #+#             */
+/*   Updated: 2022/11/20 16:09:36 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// Le fichier qui permet de verifier la validiter de argv
-
-t_pile_ab *cheker(size_t z, int argc, char **argv)
+char	*ft_strrchr(const char *s, int c)
 {
-	affichage_argc_argv(z, argc, argv);
+	size_t	i;
+
+	if (!ft_isascii(c))
+		return ((char *)s);
+	if (!s)
+		return (NULL);
+	i = ft_strlen((char *)s);
+	while (i > 0 && s[i] != c)
+		i--;
+	if (s[i] == c)
+		return ((char *) s + i);
 	return (NULL);
 }

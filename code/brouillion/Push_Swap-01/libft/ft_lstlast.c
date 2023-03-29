@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cheker.c                                           :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yzaoui <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:42:51 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/11/23 18:15:10 by yzaoui            #+#    #+#             */
+/*   Updated: 2022/11/23 18:38:39 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// Le fichier qui permet de verifier la validiter de argv
-
-t_pile_ab *cheker(size_t z, int argc, char **argv)
+t_list	*ft_lstlast(t_list *lst)
 {
-	affichage_argc_argv(z, argc, argv);
-	return (NULL);
+	if (!lst)
+		return (NULL);
+	if (!(lst->next))
+		return (lst);
+	return (ft_lstlast(lst->next));
 }

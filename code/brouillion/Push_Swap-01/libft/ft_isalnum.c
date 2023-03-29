@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cheker.c                                           :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yzaoui <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:42:51 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/11/07 13:57:39 by yzaoui            #+#    #+#             */
+/*   Updated: 2022/11/20 14:55:37 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
+#include<unistd.h>
 
-#include "../push_swap.h"
-
-// Le fichier qui permet de verifier la validiter de argv
-
-t_pile_ab *cheker(size_t z, int argc, char **argv)
+int	ft_isalnum(int cha)
 {
-	affichage_argc_argv(z, argc, argv);
-	return (NULL);
+	if (ft_isdigit(cha) || ft_isalpha(cha))
+		return (8);
+	return (0);
 }

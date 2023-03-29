@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:53:31 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/11/14 16:51:30 by yzaoui            #+#    #+#             */
+/*   Updated: 2023/03/28 18:55:22 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// fichier principal qui execute le code
-
-int	main(int argc, char **argv)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	t_pile_ab	*pile;
+	void	*pt;
+	size_t	totalsize;
 
-	pile = cheker(0, argc, argv);
-	if (error(1, pile))
-		return (1);
-	ft_printf("Pile n'est pas NULL\n----------------------\n");
-	affichage_struct(0, pile);
-	return (0);
+	if (!nmemb && !size)
+		return (NULL);
+	else if (!nmemb || !size)
+		return (malloc(0));
+	totalsize = size * nmemb;
+	if (totalsize / size != nmemb)
+		return (NULL);
+	pt = malloc(totalsize);
+	if (!pt)
+		return (NULL);
+	ft_bzero(pt, totalsize);
+	return (pt);
 }

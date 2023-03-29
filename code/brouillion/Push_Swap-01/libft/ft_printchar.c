@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:53:31 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/12/16 15:04:01 by yzaoui            #+#    #+#             */
+/*   Updated: 2023/03/27 18:48:56 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// fichier principal qui execute le code
-
-int	main(int argc, char **argv)
+int	ft_printchar(char c)
 {
-	t_pile_ab	*pile;
-
-	pile = cheker(0, argc, argv);
-	if (error(1, pile))
-		return (1);
-	ft_printf("Pile n'est pas NULL\n----------------------\n");
-	affichage_struct(0, pile);
-	return (0);
+	write(1, &c, 1);
+	return (1);
 }

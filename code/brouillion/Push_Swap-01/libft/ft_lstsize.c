@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:53:31 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/11/22 20:01:20 by yzaoui            #+#    #+#             */
+/*   Updated: 2022/11/23 18:10:37 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// fichier principal qui execute le code
-
-int	main(int argc, char **argv)
+int	ft_lstsize(t_list *lst)
 {
-	t_pile_ab	*pile;
-
-	pile = cheker(0, argc, argv);
-	if (error(1, pile))
-		return (1);
-	ft_printf("Pile n'est pas NULL\n----------------------\n");
-	affichage_struct(0, pile);
-	return (0);
+	if (!lst)
+		return (0);
+	return (1 + ft_lstsize(lst->next));
 }

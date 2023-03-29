@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cheker.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yzaoui <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:42:51 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/11/13 18:48:26 by yzaoui            #+#    #+#             */
+/*   Updated: 2022/11/14 14:04:18 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// Le fichier qui permet de verifier la validiter de argv
-
-t_pile_ab *cheker(size_t z, int argc, char **argv)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	affichage_argc_argv(z, argc, argv);
+	unsigned char	*m;
+	unsigned char	e;
+	size_t			i;
+
+	if (!s)
+		return (NULL);
+	i = 0;
+	m = (unsigned char *)s;
+	e = (unsigned char)c;
+	while (i < n)
+	{
+		if (m[i] == e)
+			return (m + i);
+		i++;
+	}
 	return (NULL);
 }

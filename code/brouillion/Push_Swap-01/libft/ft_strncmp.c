@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:53:31 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/11/14 12:39:06 by yzaoui            #+#    #+#             */
+/*   Updated: 2022/11/25 16:20:21 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// fichier principal qui execute le code
-
-int	main(int argc, char **argv)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_pile_ab	*pile;
+	size_t	i;
+	int		r;
 
-	pile = cheker(0, argc, argv);
-	if (error(1, pile))
-		return (1);
-	ft_printf("Pile n'est pas NULL\n----------------------\n");
-	affichage_struct(0, pile);
-	return (0);
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	if (n == 0 && (!s1[i] || !s2[i]))
+		return (0);
+	while (s1[i] && i < n)
+	{
+		r = (unsigned char)s1[i] - (unsigned char)s2[i];
+		i++;
+		if (r != 0)
+			return (r);
+	}
+	r = 0;
+	if (i != n)
+		r = s1[i] - s2[i];
+	return (r);
 }

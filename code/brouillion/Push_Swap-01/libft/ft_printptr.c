@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 12:53:31 by yzaoui           ###   ########.fr       */
+/*   Created: 2022/12/16 16:39:09 by yzaoui            #+#    #+#             */
+/*   Updated: 2023/03/27 18:50:32 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-// fichier principal qui execute le code
-
-int	main(int argc, char **argv)
+int	ft_printptr(void *add)
 {
-	t_pile_ab	*pile;
-
-	pile = cheker(0, argc, argv);
-	if (error(1, pile))
-		return (1);
-	ft_printf("Pile n'est pas NULL\n----------------------\n");
-	affichage_struct(0, pile);
-	return (0);
+	if (!add)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+	write(1, "0x", 2);
+	return (2 + ft_prptr((unsigned long) add, "0123456789abcdef", 16));
 }
