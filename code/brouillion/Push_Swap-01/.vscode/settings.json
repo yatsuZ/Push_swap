@@ -3,5 +3,6 @@
         "push_swap.h": "c",
         "stdlib.h": "c",
         "libft.h": "c"
-    }
+    },
+    "C_Cpp.loggingLevel": "Debug"
 }

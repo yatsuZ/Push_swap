@@ -1,10 +1,23 @@
 # Création du projet
 
+Note a moi meme me renseignier sur les "enum" pour deffinir SA, SB ... etc.
+
 ## Présentation du projet
 
 Le projet "Push_swap" consiste à trier une pile d'entiers en utilisant un nombre
 limité d'opérations.
 Ce projet est réalisé dans le cadre de l'école 42.
+
+### Regle
+
+La variable **z** sont des int, size_t, long etc qui son initialise à 0 pour
+des raison de gain de ligne.
+
+Les variable **i**, **j** sont des variables qui sont utilise comme Index pour
+se deplacer dans les tableaux.
+
+"g_text_error" dans *./utils/affichage.c* est un tableau contenant tout
+mes message de texte.
 
 ## Étape 0 : Organisation du code
 
@@ -64,7 +77,7 @@ resultat du test : :white_check_mark:.
 > dans le sujet ->
 
 ```md
-- 
+-
 
 - Vous devez rendre un Makefile qui compilera vos fichiers sources. Il ne doit pas
 relink.
@@ -221,6 +234,7 @@ Pour moi le cas 3, 4, 5 seront considerer comme des erreur de formatage le reste
 NULL
 ```
 
+> Je devrais tout *free* et avoir aucun problème de segmentation fault.
 > Et le programme devra retourner **"Error" suivi d’un ’\n’** sur la sortie d’erreur
 > c'est a dire
 

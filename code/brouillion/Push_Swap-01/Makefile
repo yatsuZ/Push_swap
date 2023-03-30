@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/03/30 14:39:53 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/03/30 19:30:51 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,9 @@ SRC_FILES =		main.c		\
 				parsing.c
 
 DIR_UTILS =		./utils/
-UTILS_FILES =	affichage.c \
-				error.c
+UTILS_FILES =	affichage.c	\
+				error.c		\
+				struct.c
 
 SRC =	${addprefix ${DIR_SRC}, ${SRC_FILES}} \
 		${addprefix ${DIR_UTILS}, ${UTILS_FILES}}
@@ -39,7 +40,7 @@ all : ${NAME}
 clean :
 	${MAKE_LIBFT} clean
 	${RM} ${OBJ}
-	
+
 fclean : clean
 	${MAKE_LIBFT} fclean
 	${RM} ${NAME}
