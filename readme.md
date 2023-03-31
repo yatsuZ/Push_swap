@@ -7,23 +7,23 @@
 
 Push_swap est un projet de l'école 42 qui consiste à trier des entiers,
 mais avec 2 pile, pile 'a' et 'b'.
-Mais la diffculte consiste a minimise le nombre d'operation.
-Donc c'est un  projet basé sur l'algoritmy (c'est ce que j'aime dans le code :heart:).
+Mais la diffculté consiste à minimiser le nombre d'opération.
+Donc c'est un  projet basé sur l'algorythme (c'est ce que j'aime dans le code :heart:).
 
 ## Status
 
 Pas encore notée.
 
-## Comment ai je proceder ?
+## Comment ai-je procedé ?
 
-Si vous voulez savoir comment j'ai cree push swap.
-regarder ce fichier md -> [Creation du push swap de yassine](Creation_du_projet.md).
+Si vous voulez savoir comment j'ai crée push swap.
+regardez ce fichier md -> [Creation du push swap de yassine](Creation_du_projet.md).
 
 ## Règle Push_Swap et classement
 
 Le programme n'est autorisé à travailler qu'avec deux piles,
 la pile A et la pile B.
-Tous les nombres sont initialement ajoutés à la pile A et B est vide.
+Tous les nombres sont initialement ajoutés à la pile A tandis B est vide.
 
 Les actions possibles sont :
 
@@ -45,7 +45,7 @@ La note dépend de l'efficacité du processus de tri du programme.
 
 - Tri 3 valeurs : pas plus de 3 actions.
 - Tri 5 valeurs : pas plus de 12 actions.
-- Tri de 100 valeurs : notation de 1 à 5 points deprend du nombre d'actions.
+- Tri de 100 valeurs : notation de 1 à 5 points dépend du nombre d'actions.
 
 | Nombre de point | Score à avoir        |
 | --------------- | -------------------- |
@@ -55,7 +55,7 @@ La note dépend de l'efficacité du processus de tri du programme.
 | 2 point         | moin de 1 300 action |
 | 1 point         | moin de 1 500 action |
 
-- Tri de 500 valeurs : notation de 1 à 5 points deprend du nombre d'actions.
+- Tri de 500 valeurs : notation de 1 à 5 points dépend du nombre d'actions.
 
 | Nombre de point | Score à avoir         |
 | --------------- | --------------------- |
@@ -67,9 +67,9 @@ La note dépend de l'efficacité du processus de tri du programme.
 
 ## Explication Bonus
 
-Le bonus consiste de faire son propre cheker comme "checker_linux" ou
+Le bonus consiste à faire son propre cheker comme "checker_linux" ou
 "checker_Mac".
-Il consistera a verifier que liste d'instruction permetra de bien trier
+Il consistera à verifier que la liste d'instruction permettra de bien trier
 la pile.
 
 ## **!! PAS ENCORE FINI DONC LA DEUXIEME PARTIE PAS ENCORE VALIDE !!**
