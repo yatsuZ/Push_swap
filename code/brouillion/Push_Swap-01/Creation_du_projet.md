@@ -8,6 +8,12 @@ Le projet "Push_swap" consiste à trier une pile d'entiers en utilisant un nombr
 limité d'opérations.
 Ce projet est réalisé dans le cadre de l'école 42.
 
+### Chose aprise
+
+dans le makefile -s permet de ne pas afficher l'affichage de make .
+
+-g3 permet davoir le numero des ligne pour valgrind lldb.
+
 ### Regle
 
 La variable **z** sont des int, size_t, long etc qui son initialise à 0 pour

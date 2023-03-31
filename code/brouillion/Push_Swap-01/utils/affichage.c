@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/30 18:20:23 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/03/31 15:43:52 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 /*
 Affiche les nombre d'argument mis et le contenant.
 */
-void	affichage_argc_argv(size_t z, int argc, char **argv)
+void	affichage_argc_argv(int z, int argc, char **argv)
 {
 	ft_printf("Nombre d'argument = %d\n", argc);
 	ft_printf("-------------------\n");
@@ -35,36 +35,42 @@ void	affichage_argc_argv(size_t z, int argc, char **argv)
 }
 
 // Refaire la fonction !!
+
+// Affichage d'un mayon
+// position	| pointeur	| valeur	| index	| previous	| next
+void	affichage_mayon(t_mayon *m)
+{
+	if (m)
+	{
+		ft_printf("\t%d\t| %p\t| %d\t| %d\t| %p\t| %p\n", m->position, m, m->val, \
+		m->index, m->previous, m->next);
+	}
+	else
+		ft_printf("\t-\t| -\t| -\t| -\t| -\t| -\t\n\n");
+}
+
+// Affiche toute la pile c'est a dire de chaque mayon
+void	affichage_pile(t_mayon *p)
+{
+	ft_printf("Affichage de toute une pile :\n");
+	if (!(p))
+		return (ft_printf("------- NULL ---------"), void);
+	ft_printf("\tposition\t| pointeur\t| valeur\t| index\t| previous\t| next");
+	ft_lstiter(p, &affichage_mayon);
+}
+
 /*
 Affiche chaque contenue de la strucutre " t_pile "
 pointeur contenue etc ...
 */
-void	affichage_struct(t_pile *p)
+void	affichage_struct_all(t_pile *s)
 {
-	ft_printf("Nombre d'argument = %d\n", p->len_total);
-}
-
-//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- Pour les Erreurs
-
-static const char	*g_text_error[] = {
-	"ID error 0 : Un malloc n'a pas fonctione\n",
-	NULL,
-	"ID error 2 : Argument Invalide dans le parsing"
-};
-
-// Affiche "Error\n" sur la sortie d'erreur
-void	print_error_endl(void)
-{
-	write(2, "Error\n", 5);
-}
-
-/*
-En fonction d'id_error j'affiche son text correspondent
-Cas Particulier pour -1 qui affiche "Error\n" sur la sotie d'erreur
-*/
-void	print_text_error(int id_error)
-{
-	if (id_error == 2)
-		print_error_endl();
-	ft_printf(g_text_error[id_error]);
+	ft_printf("Affichage de toute la structure \"t_pile\":\n");
+	if (!(s))
+		return (ft_printf("~~~~~~~ NULL ~~~~~~~\n"));
+	ft_printf("Nombre de mayon total= %d\n", s->len_total);
+	ft_printf("--------------------- Affichage de la pile A :\n");
+	affichage_pile(s->a);
+	ft_printf("--------------------- Affichage de la pile B :\n");
+	affichage_pile(s->b);
 }
