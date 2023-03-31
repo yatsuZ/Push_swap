@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/31 15:43:52 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/03/31 18:31:50 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,59 @@ void	affichage_argc_argv(int z, int argc, char **argv)
 
 // Refaire la fonction !!
 
+// -2147483648
+// 2147483647
+// 100000
+
+void	print_tab(int valeur, int option)
+{
+	if (option)
+	{
+		if (valeur < 10 && valeur > -1)
+			ft_printf(" %d\t\t\t|", valeur);
+		else if (valeur < 100 && valeur > -10)
+			ft_printf(" %d\t\t|", valeur);
+		else if (valeur <= -1000000000)
+			ft_printf(" %d", valeur);
+		else if (valeur <= -100000000 || valeur >= 1000000000)
+			ft_printf(" %d|", valeur);
+		else
+			ft_printf(" %d\t|", valeur);
+	}
+	else
+		ft_printf(" %d\t\t|", valeur);
+}
+
 // Affichage d'un mayon
 // position	| pointeur	| valeur	| index	| previous	| next
 void	affichage_mayon(t_mayon *m)
 {
-	if (m)
-	{
-		ft_printf("\t%d\t| %p\t| %d\t| %d\t| %p\t| %p\n", m->position, m, m->val, \
-		m->index, m->previous, m->next);
-	}
+	if (!m)
+		return ;
+	ft_printf("\t|");
+	print_tab(m->position, 1);
+	ft_printf(" %p\t|", m);
+	print_tab(m->val, 1);
+	print_tab(m->index, 0);
+	if (m->previous)
+		ft_printf(" %p\t|", m->previous);
 	else
-		ft_printf("\t-\t| -\t| -\t| -\t| -\t| -\t\n\n");
+		ft_printf(" %p\t\t|", m->previous);
+	ft_printf(" %p\n", m->next);
+	if (!(m->next))
+		ft_printf("\t| -\t\t\t| -\t\t\t| -\t\t\t| -\t\t| -\t\t\t| -\n\n");
 }
 
 // Affiche toute la pile c'est a dire de chaque mayon
 void	affichage_pile(t_mayon *p)
 {
-	ft_printf("Affichage de toute une pile :\n");
+	ft_printf("Affichage de la pile :\n");
 	if (!(p))
-		return (ft_printf("------- NULL ---------"), void);
-	ft_printf("\tposition\t| pointeur\t| valeur\t| index\t| previous\t| next");
-	ft_lstiter(p, &affichage_mayon);
+		return ((void) ft_printf("\t------- NULL ---------\n\n"));
+	ft_printf("\t| position\t| pointeur\t| valeur\t| index\t| previous\t| next\n");
+	ft_printf("\t| ----------|-----------|-----------\
+|-------|-----------|------------\n");
+	ft_mayon_iter(p, affichage_mayon);
 }
 
 /*
@@ -65,12 +97,12 @@ pointeur contenue etc ...
 */
 void	affichage_struct_all(t_pile *s)
 {
-	ft_printf("Affichage de toute la structure \"t_pile\":\n");
+	ft_printf("Affichage de toute la structure \"t_pile\":\n\n");
 	if (!(s))
-		return (ft_printf("~~~~~~~ NULL ~~~~~~~\n"));
-	ft_printf("Nombre de mayon total= %d\n", s->len_total);
-	ft_printf("--------------------- Affichage de la pile A :\n");
+		return ((void) ft_printf("~~~~~~~ NULL ~~~~~~~\n"));
+	ft_printf("Nombre de mayon total= %d\n\n", s->len_total);
+	ft_printf("--------------------- PILE A :\n");
 	affichage_pile(s->a);
-	ft_printf("--------------------- Affichage de la pile B :\n");
+	ft_printf("--------------------- PILE B :\n");
 	affichage_pile(s->b);
 }

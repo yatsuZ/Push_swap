@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/31 15:42:01 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/03/31 17:39:37 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,16 @@ void		print_text_error(int id_error);
 
 int			error(int id_verif, void *element, int affichage);
 
-//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Creation Struct
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction pour free
 
-t_mayon		*creat_mayon(int value, t_mayon *previous);
-t_pile		*creat_pil(void);
+void		free_struct(t_pile **p);
+void		free_pile(t_mayon **s);
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction pour Struct
+
+t_mayon		*creat_mayon(int value, int position, t_mayon *previous);
+void		ft_mayon_iter(t_mayon *mayon, void (*f)(t_mayon *));
+t_pile		*creat_struct(t_mayon *pile_a);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Parsing
 

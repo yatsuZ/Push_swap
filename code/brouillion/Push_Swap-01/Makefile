@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/03/31 15:20:38 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/03/31 17:36:27 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ DIR_UTILS =		./utils/
 UTILS_FILES =	affichage.c		\
 				error_text.c	\
 				error.c			\
+				struct_free.c	\
 				struct.c
 
 SRC =	${addprefix ${DIR_SRC}, ${SRC_FILES}} \
@@ -38,9 +39,6 @@ ${NAME}: ${OBJ}
 
 all : ${NAME}
 
-propre:
-	@ make all -s
-	@ make clean -s
 
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
@@ -59,7 +57,26 @@ re : fclean all
 
 # Verifie la norminette
 norme :
+	@ clear
 	@ if ! norminette | grep "Error"; then echo "\033[32mOK!\033[0m"; fi
+
+propre:
+	@ make all -s
+	@ make clean -s
+
+test:
+	@ clear
+	@ make propre -s
+	@ echo "Resultat du programme ./push_swap : "
+	@ echo
+	@ ./push_swap
+
+val:
+	@ clear
+	@ make propre -s
+	@ echo "Resultat du programme ./push_swap : "
+	@ echo
+	valgrind --leak-check=full --show-leak-kinds=all ./push_swap
 
 #################
 
