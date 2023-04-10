@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:18:20 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/31 15:19:44 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/10 19:51:19 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 static const char	*g_text_error[] = {
 	"ID error 0 : Un malloc n'a pas fonctione\n",
 	NULL,
-	"ID error 2 : Argument Invalide dans le parsing"
+	"ID error 2 : Argument Invalide dans le parsing",
+	"ID error 3 : Overflow la valeur n'est pas un int",
+	"ID error 3 : Erreur Syntax un carractere n'est pas un nombre."
 };
 
 // Affiche "Error\n" sur la sortie d'erreur

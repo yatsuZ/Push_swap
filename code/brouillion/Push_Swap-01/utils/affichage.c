@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/31 18:31:50 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/10 18:30:29 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ void	affichage_argc_argv(int z, int argc, char **argv)
 	}
 }
 
-// Refaire la fonction !!
-
-// -2147483648
-// 2147483647
-// 100000
-
+// Permet des reguler nombre d'espace et de print pour affichage_mayon
 void	print_tab(int valeur, int option)
 {
 	if (option)

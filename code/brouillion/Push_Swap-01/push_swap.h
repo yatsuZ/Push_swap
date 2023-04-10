@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/31 17:39:37 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/10 19:09:56 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ t_pile		*creat_struct(t_mayon *pile_a);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Parsing
 
-t_mayon		*parsing(size_t i, int argc, char **argv);
+t_mayon		*parsing(int z, int argc, char **argv);
 
 #endif

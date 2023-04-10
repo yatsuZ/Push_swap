@@ -6,12 +6,13 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:12:02 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/29 15:24:49 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/10 19:24:33 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// convertie un str * en int
 int	ft_atoi(const char *nptr)
 {
 	long	nbr;
