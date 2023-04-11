@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/10 19:09:56 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/11 16:37:55 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ void		affichage_argc_argv(int z, int argc, char **argv);
 void		affichage_mayon(t_mayon *m);
 void		affichage_pile(t_mayon *p);
 void		affichage_struct_all(t_pile *s);
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Gestion message d'erreur
+
+int			id_error_2(void *p, int affichage);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Gestion message d'erreur
 

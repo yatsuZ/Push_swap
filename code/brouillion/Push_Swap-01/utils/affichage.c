@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/10 18:30:29 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:18:35 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	print_tab(int valeur, int option)
 		else if (valeur <= -100000000 || valeur >= 1000000000)
 			ft_printf(" %d|", valeur);
 		else
-			ft_printf(" %d\t|", valeur);
+			ft_printf(" %d\t\t|", valeur);
 	}
 	else
 		ft_printf(" %d\t\t|", valeur);

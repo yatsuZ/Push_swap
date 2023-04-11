@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/03/31 17:36:27 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/04/11 13:42:44 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC_FILES =		main.c			\
 
 DIR_UTILS =		./utils/
 UTILS_FILES =	affichage.c		\
+				convertisseur.c	\
 				error_text.c	\
 				error.c			\
 				struct_free.c	\

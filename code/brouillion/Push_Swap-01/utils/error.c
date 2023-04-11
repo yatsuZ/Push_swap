@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:29:34 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/10 19:21:35 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/11 16:37:48 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int	id_error_1(void *p, int affichage)
 // Tableau de toute mes fonction error.
 static int (*const	g_verif_error[])(void *p, int affichage) = {
 	&id_error_0,
-	&id_error_1
+	&id_error_1,
+	&id_error_2
 };
 
 /*

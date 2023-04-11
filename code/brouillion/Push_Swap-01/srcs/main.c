@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/10 19:06:00 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:15:12 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(int argc, char **argv)
 	a = parsing(0, argc, argv);
 	if (error(0, a, 1))
 		return (1);
+	ft_printf("\n\nFIN ->\n");
+	affichage_pile(a);
 	pils = creat_struct(a);
 	free_struct(&pils);
 	return (0);

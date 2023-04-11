@@ -218,18 +218,17 @@ ERROR !
 - Si la valeur est > int_max ou int_min < alors. ERROR !
 - Si il y a une redondonce c'est a dire 2 fois la meme valeur.
 ERROR !
+- Si l'instruction "pb", etc.. est mal formattée ou n'existe pas. ERROR !
 - Appliquer l'erreur de formatage ?? ambigue car les quelle
 sont des erreur de formatage :
 
 ```bash
-cas 1 $>./checker -3 1 0
-cas 2 $>./checker +3 1 0
-cas 3 $>./checker 3- 1 0
-cas 4 $>./checker 3+ 1 0
-cas 5 $>./checker p3 1 0
-cas 6 $>./checker "3 1 0"
-cas 7 $>./checker 0000003 1 0
-cas 8 $>./checker 3 "1 0" 12
+cas 1 $>./push_swap 3- 1 0
+cas 2 $>./push_swap 3+ 1 0
+cas 3 $>./push_swap p3 1 0
+cas 4 $>./push_swap "3 1 0"
+cas 5 $>./push_swap 0000003 1 0
+cas 6 $>./push_swap 3 "1 0" 12
 ```
 
 Pour moi le cas 3, 4, 5 seront considerer comme des erreur de formatage le reste non.
