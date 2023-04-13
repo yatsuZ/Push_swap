@@ -8,12 +8,6 @@ Le projet "Push_swap" consiste à trier une pile d'entiers en utilisant un nombr
 limité d'opérations.
 Ce projet est réalisé dans le cadre de l'école 42.
 
-### Chose aprise
-
-dans le makefile -s permet de ne pas afficher l'affichage de make .
-
--g3 permet davoir le numero des ligne pour valgrind lldb.
-
 ### Regle
 
 La variable **z** sont des int, size_t, long etc qui son initialise à 0 pour
@@ -36,6 +30,10 @@ nous allons utiliser une structure de dossier similaire à celle-ci :
 push_swap/
 ├── libft/
 │   └── ...
+├── Instruction/
+│   ├── instructions.c
+│   ├── push_a.c
+│   └── ...
 ├── utils/
 │   ├── affichage.c
 │   ├── error.c
@@ -52,7 +50,8 @@ push_swap/
 
 Dans ce dossier, nous avons :
 
-- Un dossier libft contenant tout mes code de projet precedent donc : libft + GNL.
+- Un dossier libft contenant tout mes code de projet precedent donc : libft + GNL + FT_PRINTF.
+- Un dossier Instruction contenant tout les actions possible du style rra rpa etc...
 - Un dossier utils contenannt des fonction utile affichage et gestion d'erreur etc.
 - Un dossier srcs contenant les fichiers sources du projet specifique a
 la resolution du problème pushswap.
@@ -83,8 +82,6 @@ resultat du test : :white_check_mark:.
 > dans le sujet ->
 
 ```md
--
-
 - Vous devez rendre un Makefile qui compilera vos fichiers sources. Il ne doit pas
 relink.
 
@@ -193,11 +190,13 @@ brouillion.
 ```md
 - Si aucun paramètre n’est spécifié, le programme ne doit rien afficher et rendre
 l’invite de commande.
+
 - En cas d’erreur, vous devez afficher "Error" suivi d’un ’\n’ sur la sortie d’erreur.
 Par exemple, si certains paramètres ne sont pas des nombres, ne tiennent pas dans
 un int, ou encore, s’il y a des doublons.
 
 ...
+
 (consigne pour le bonus)
 - En cas d’erreur, vous devez afficher "Error" suivi d’un ’\n’ sur la sortie d’erreur.
 Par exemple, si certains paramètres ne sont pas des nombres, ne tiennent pas dans
@@ -207,15 +206,9 @@ mal formatée.
 
 Un input incoreccte c'est :
 
-- Si certains paramètres ne sont pas des nombres. Exemple :
+- Si certains paramètres ne sont pas des nombres. ERROR !
 
-```bash
-$>./checker 3 q 1 0
-```
-
-ERROR !
-
-- Si la valeur est > int_max ou int_min < alors. ERROR !
+- Si la valeur n'est pas compris dans les int. ERROR !
 - Si il y a une redondonce c'est a dire 2 fois la meme valeur.
 ERROR !
 - Si l'instruction "pb", etc.. est mal formattée ou n'existe pas. ERROR !
@@ -231,8 +224,6 @@ cas 5 $>./push_swap 0000003 1 0
 cas 6 $>./push_swap 3 "1 0" 12
 ```
 
-Pour moi le cas 3, 4, 5 seront considerer comme des erreur de formatage le reste non.
-
 > Alors le parsing retournera :
 
 ```c
@@ -244,20 +235,50 @@ NULL
 > c'est a dire
 
 ```c
-write(2, "Error\n", 5)
+write(2, "Error\n", 6)
 ```
 
 > Sinon si correcte ALORS
 >
-> retournera une structure **t_mayon** puis l'atribut *a* recevra le mayon  pour
+> retournera une structure **t_mayon** puis l'atribut *a* recevra le mayon.
 
-```c
-t_mayon *parsing(...);
-t_pile *piles;
-...
-piles->a = parsing
-```
+Le parsing est cree et cree une pile uniquement si les condition son valide
 
-Apres avoir crée le parsing je le testerais.
+Resultat du test : :white_check_mark: .
 
-Resultat du test : :x:.
+## Crée les action possible
+
+maintenant je dois crée les fonctions et pour caque foncion ils devrons afficher 'sa'etc :
+
+| Code  | Instruction                         | Traduction                              | Action                                                                                                                   |
+| ----- | ----------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `sa`  | swap a                              | échanger a                              | Intervertit les 2 premiers éléments au sommet de la pile a. Ne fait rien s’il n’y en a qu’un ou aucun.                   |
+| `sb`  | swap b                              | échanger b                              | Intervertit les 2 premiers éléments au sommet de la pile b. Ne fait rien s’il n’y en a qu’un ou aucun.                   |
+| `ss`  | swap a + swap b                     | échanger a  + échanger b                | sa et sb en même temps.                                                                                                  |
+| `pa`  | push a                              | pousser a                               | Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.                                     |
+| `pb`  | push b                              | pousser b                               | Prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.                                     |
+| `rb`  | rotate b                            | rotation b                              | Décale d’une position vers le haut tous les élements de la pile b. Le premier élément devient le dernier.                |
+| `ra`  | rotate a                            | rotation a                              | Décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.                |
+| `rr`  | rotate a + rotate b                 | rotation a + rotation b                 | ra et rb en même temps.                                                                                                  |
+| `rra` | reverse rotate a                    | rotation inverse a                      | Décale d’une position vers le bas tous les élements de la pile a. Le dernier élément devient le premier                  |
+| `rrb` | reverse rotate b                    | rotation inverse b                      | Décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier.                 |
+| `rrr` | reverse rotate a + reverse rotate b | rotation inverse a + rotation inverse b | rra et rrb en même temps.                                                                                                |
+
+Creation FINI : :x: .
+
+----------------------------------------
+
+## Auteur
+
+Ce projet a été réalisé par MOI !!! :smiley:
+
+| Info          | Ou me retrouver                                                      |
+| ------------- | -------------------------------------------------------------------- |
+| Nom👋         | Zaoui                                                                |
+| Prenom😄      | Yassine                                                              |
+| Pseudo😁      | Yatsu                                                                |
+| Login 42🏫    | Yzaoui                                                               |
+| E-mail📬      | y.zaoui.pro@gmail.com                                                |
+| E-mail42📩    | yzaoui@student.42.fr                                                 |
+| Linkdin👨‍💻     | [Yassine Zaoui](https://www.linkedin.com/in/yassine-zaoui-23b005229/)|
+| Instagram📸   | [@yatsu__officiel](https://www.instagram.com/yatsu__officiel/)       |

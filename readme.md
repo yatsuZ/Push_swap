@@ -168,6 +168,20 @@ voir ce repos si vous shouaiter avoir une interface visuel :
 
 ----------------------------------------
 
+## Chose aprise
+
+dans le makefile -s permet de ne pas afficher l'affichage de make .
+
+-g3 permet davoir le numero des ligne pour valgrind lldb.
+
+-llbd qui est un debeuguer qui permet de voir son code s'executer ligne par ligne.
+
+## Merci
+
+Je tiens remercie mex camarade qui m'ont aide pour ce projet donc Merci
+
+- **prenom** pour **en quoi cette personne ma aide.**
+
 ## Auteur
 
 Ce projet a été réalisé par MOI !!! :smiley:

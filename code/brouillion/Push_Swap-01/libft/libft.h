@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:31:45 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/03/31 13:23:17 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/13 17:39:41 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 ///////////////////////////////////////////////////// PRINTF
-
+/*
+	@brief Reproduit la fonction printf.
+*/
 int		ft_printf(const char *str, ...);
 int		ft_printchar(char c);
 int		ft_printstr(char *str);

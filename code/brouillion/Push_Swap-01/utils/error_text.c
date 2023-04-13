@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:18:20 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/11 16:45:03 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/13 17:34:31 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Gestionde message d'erreur.
 
-// Tableau contenant tout mes message d'erreur
+// @brief Tableau contenant tout mes message d'erreur
 static const char	*g_text_error[] = {
 	"ID error 0 : Un malloc n'a pas fonctione\n",
 	NULL,
@@ -27,15 +27,18 @@ permise.\n",
 \n"
 };
 
-// Affiche "Error\n" sur la sortie d'erreur
+// @brief Affiche "Error\n" sur la sortie d'erreur.
 void	print_error_endl(void)
 {
 	write(2, "Error\n", 6);
 }
 
 /*
-En fonction d'id_error j'affiche son text correspondent
-Cas Particulier entre 2 et 4 compris qui affiche "Error\n" sur la sortie d'erreur
+	@brief fonction affiche le bon message d'erreur en fonction du parametre.
+	@param id_error int, sa valeur corespond a un index du tableau g_text_error
+	@returns Ne retourne rien. Mais Affiche un message d'erreur.
+	Cas particulier entre 2 et 3 qui doivent, affiche en plus
+	"Error\n" sur la sortie d'erreur.
 */
 void	print_text_error(int id_error)
 {

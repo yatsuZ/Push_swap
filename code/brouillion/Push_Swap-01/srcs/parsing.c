@@ -6,23 +6,32 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/11 16:54:14 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/13 16:31:07 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// Le fichier qui permet de verifier la validiter de argv
+// Le fichier qui permet de verifier la validiter des arguments
 /*
 TO DO:
 	Anticiper les erreur d'argument, error syntax, non int.	V
 	Ajouter au fur est a mesure les elements de la pile.	V
-	Tout free en cas d'erreur.								X
-	Rajouter le cas d'erreur de doublons.					X
-Note -> en cas d'erreur tout free.
+	Tout free en cas d'erreur.								V
+	Rajouter le cas d'erreur de doublons.					V
+	Norminette												V
+Parsing FINI.
 */
 
-// Return 1 si il y a 2 fois la meme valeur.
+/*
+	@brief Verifier qu'il n'y a pas 2 fois la meme valeur dans la structure
+	"t_mayon". La fonction marche en recursif.
+	@param val la valeur que l'ont doit verifier dans la structure.
+	@param tete la tete de ma structure "t_mayon"
+	@returns Return 0 Si la tete est null est vide ou que la valeur n'a pas etais
+	trouver dans la structure.
+	Sinon affiche un message d'erreur et return 1 si la valeur est trouver.
+*/
 int	no_double(int val, t_mayon *tete)
 {
 	if (!tete)
@@ -36,19 +45,15 @@ int	no_double(int val, t_mayon *tete)
 }
 
 /*
-Le but du parsing et de lire les arguments
-Si aucun paramètre n’est spécifié, le programme ne doit rien afficher et rendre
-l’invite de commande.
-En cas d’erreur, vous devez afficher "Error" suivi d’un ’\n’ sur la
-sortie d’erreur.
-CAS d'erreur -> si certains paramètres ne sont pas des nombres, ne tiennent
-pas dans un int, ou encore, s’il y a des doublons.
 
-Si il y a rien en parametre la fonction retournera null .
-Si les paramtre ne sont pas valide (ce nest pas un int ou erreur de syntax),
-retournera null mais affichera "Error" suivi d’un ’\n’ sur la
-sortie d’erreur et je free tout.
-Sinon retourne la pile a
+	@brief La fonction "parsing" lit les arguments passés en entrée et renvoie une pile de valeurs.
+	@param z: entier, valeur initiale pour le parcours des arguments inialise a 0.
+	@param argc: entier, nombre d'arguments passés en entrée.
+	@param argv: tableau de chaînes de caractères, arguments passés en entrée.
+	@returns un pointeur vers la tête de la pile si les arguments sont valides, NULL sinon
+	Si aucun argument n'est fourni, la fonction retourne NULL.
+	Si les arguments ne sont pas valides (par exemple, s'ils ne sont pas des entiers ou s'il y a deux fois la même valeur),
+	la fonction renvoie NULL mais affiche un message d'erreur sur la sortie d'erreur.
 */
 t_mayon	*parsing(int z, int argc, char **argv)
 {
@@ -64,10 +69,7 @@ t_mayon	*parsing(int z, int argc, char **argv)
 		z++;
 		new_val = ft_atoi(argv[z]);
 		if (error(2, argv[z], 1) || no_double(new_val, tete))
-		{
-			free_pile(&tete);
-			return (0);
-		}
+			return (free_pile(&tete));
 		if (!tete)
 		{
 			index = creat_mayon(new_val, (z - 1), 0);
