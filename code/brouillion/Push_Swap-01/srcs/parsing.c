@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 16:31:07 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/13 19:02:00 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ TO DO:
 	Tout free en cas d'erreur.								V
 	Rajouter le cas d'erreur de doublons.					V
 	Norminette												V
+	ajouter un fonction qui ajoute les index
 Parsing FINI.
 */
 
@@ -45,15 +46,19 @@ int	no_double(int val, t_mayon *tete)
 }
 
 /*
-
-	@brief La fonction "parsing" lit les arguments passés en entrée et renvoie une pile de valeurs.
-	@param z: entier, valeur initiale pour le parcours des arguments inialise a 0.
+	@brief La fonction "parsing" lit les arguments passés en entrée et renvoie
+	une pile de valeurs.
+	@param z: entier, valeur initiale pour le parcours des arguments inialise
+	a 0.
 	@param argc: entier, nombre d'arguments passés en entrée.
 	@param argv: tableau de chaînes de caractères, arguments passés en entrée.
-	@returns un pointeur vers la tête de la pile si les arguments sont valides, NULL sinon
+	@returns un pointeur vers la tête de la pile si les arguments sont valides,
+	NULL sinon
 	Si aucun argument n'est fourni, la fonction retourne NULL.
-	Si les arguments ne sont pas valides (par exemple, s'ils ne sont pas des entiers ou s'il y a deux fois la même valeur),
-	la fonction renvoie NULL mais affiche un message d'erreur sur la sortie d'erreur.
+	Si les arguments ne sont pas valides (par exemple, s'ils ne sont pas des
+	entiers ou s'il y a deux fois la même valeur),
+	la fonction renvoie NULL mais affiche un message d'erreur sur la sortie
+	d'erreur.
 */
 t_mayon	*parsing(int z, int argc, char **argv)
 {

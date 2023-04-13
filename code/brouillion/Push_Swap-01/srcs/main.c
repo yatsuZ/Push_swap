@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 17:32:01 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/13 18:47:07 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-// verifier tout les malloc / calloc verifier et corriger anticiper les cas d'erreur
+// verifier tout les malloc / calloc verifier et corriger anticiper
+// les cas d'erreur

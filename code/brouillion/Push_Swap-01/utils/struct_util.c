@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_a.c                                           :+:      :+:    :+:   */
+/*   struct_util.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 15:01:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 18:48:18 by yzaoui           ###   ########.fr       */
+/*   Created: 2023/04/13 18:53:00 by yzaoui            #+#    #+#             */
+/*   Updated: 2023/04/13 19:00:44 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/*
-swap_a doit :
+// Fonction utile pour les structure
 
-Intervertit les 2 premiers éléments au sommet de la pile a.
-Ne fait rien s’il n’y en a qu’un ou aucun.
+/*
+	@brief Consiste a metre un index a tout les mayons a partire de leur valeur.
+	je prend la valeur de chaque element et je le compare avec tout les au
 */
+void	put_index(t_pile *pils)
+{
+
+}
