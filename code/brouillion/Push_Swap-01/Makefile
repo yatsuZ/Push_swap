@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/04/11 13:42:44 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/04/17 14:04:46 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,12 @@ UTILS_FILES =	affichage.c		\
 				struct_free.c	\
 				struct.c
 
-SRC =	${addprefix ${DIR_SRC}, ${SRC_FILES}} \
-		${addprefix ${DIR_UTILS}, ${UTILS_FILES}}
+DIR_INSTRUCTION =	./Instruction/
+INSTRUCTION_FILES =	push_a.c
+
+SRC =	${addprefix ${DIR_SRC}, ${SRC_FILES}}		\
+		${addprefix ${DIR_UTILS}, ${UTILS_FILES}}	\
+		${addprefix ${DIR_INSTRUCTION}, ${INSTRUCTION_FILES}}	\
 
 OBJ = ${SRC:.c=.o}
 NAME = push_swap

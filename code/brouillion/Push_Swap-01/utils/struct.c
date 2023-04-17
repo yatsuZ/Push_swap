@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:01:19 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 18:50:19 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 14:16:37 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,28 @@ int	ft_mayon_size(t_mayon *pile_a)
 }
 
 /*
+	@brief Ajutse l'index de chaque mayon par raport aux
+	mayon actuel (qui est le dernier).
+	et je parcours jusqu'aux premier mayon.
+	Si la valeur du mayon current est superieur alors
+	il est egal aux mayons precedent +1.
+	Sinon le mayon precedent on lui rajoute +1.
+	@param current pointeur de t_mayon correspond aux moyons actuel.
+	@param precedent le mayon prdent.
+	@return Rien pour linstant.
+*/
+void	put_index(t_mayon *previous, t_mayon *current)
+{
+	if (!previous)
+		return ;
+	if (previous->val > current->val)
+		previous->index++;
+	else
+		current->index = previous->index + 1;
+	put_index(previous->previous, current);
+}
+
+/*
 	@brief Fonction qui crée un mayon
 	@param value int qui sera egal a la valeur int du mayon qu'on cree.
 	@param position int qui corepond a leur index dans la pile.
@@ -59,7 +81,8 @@ t_mayon	*creat_mayon(int value, int position, t_mayon *previous)
 	new_mayon->index = 0;
 	new_mayon->position = position;
 	new_mayon->previous = previous;
-	new_mayon->next = NULL;
+	new_mayon->next = 0;
+	put_index(previous, new_mayon);
 	return (new_mayon);
 }
 
