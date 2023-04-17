@@ -6,15 +6,31 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:09:15 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 16:02:26 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 19:10:56 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /*
-swap_b doit :
-
-Intervertit les 2 premiers éléments au sommet de la pile b.
-Ne fait rien s’il n’y en a qu’un ou aucun.
+	@param pils conetnant tout le element important.
+	@brief Intervertit les 2 premiers éléments au sommet de la pile b.
+	Ne fait rien s’il n’y en a qu’un ou aucun.
 */
+void	sb(t_pile *pils)
+{
+	t_mayon	*second;
+	t_mayon	*first;
+
+	if (pils->b == 0 || pils->len_b <= 1)
+		return ;
+	first = pils->b;
+	second = pils->b->next;
+	first->position = 1;
+	second->position = 0;
+	first->previous = second;
+	second->previous = 0;
+	first->next = second->next;
+	second->next = first;
+	pils->b = second;
+}

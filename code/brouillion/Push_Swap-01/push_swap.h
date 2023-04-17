@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 15:46:23 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 19:13:27 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,21 @@ typedef struct s_pile
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Instructions
 
+void		pa(t_pile *pils);
+void		pb(t_pile *pils);
+void		rra(t_pile *pils);
+void		rrb(t_pile *pils);
+void		rrr(t_pile *pils);
+void		ra(t_pile *pils);
+void		rb(t_pile *pils);
+void		sa(t_pile *pils);
+void		sb(t_pile *pils);
+void		ss(t_pile *pils);
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
+
 void		adjusted_position(int decalage, t_mayon *pil);
-void		push_a(t_pile *pils);
-void		push_b(t_pile *pils);
+t_mayon		*get_last_mayon(t_mayon *pil);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Affichage
 

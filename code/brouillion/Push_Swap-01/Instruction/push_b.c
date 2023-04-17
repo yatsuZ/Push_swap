@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:02:59 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 15:55:41 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 19:10:05 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 	@brief Prend le premier élément au sommet de a et le met sur b.
 	Ne fait rien si a est vide.
 */
-void	push_b(t_pile *pils)
+void	pb(t_pile *pils)
 {
 	t_mayon	*element;
 
@@ -40,4 +40,3 @@ void	push_b(t_pile *pils)
 	pils->len_b = pils->len_b + 1;
 	pils->len_a = pils->len_a - 1;
 }
-

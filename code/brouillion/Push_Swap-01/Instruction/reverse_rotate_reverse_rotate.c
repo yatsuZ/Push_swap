@@ -6,18 +6,21 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:25:17 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 18:25:51 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 18:41:16 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /*
-reverse_rotate_reverse_rotate doit :
-
-rra et rrb en même temps.
-DONC
-Décale d’une position vers le bas tous les élements de
-la pile a et b.
-Le dernier élément devient le premier.
+	@brief fais rra et rrb en meme temp.
+	Décale d’une position vers le bas tous les élements de
+	la pile a et b.
+	Le dernier élément devient le premier.
+	@param pils conetnant tout le element important.
 */
+void	rrr(t_pile *pils)
+{
+	rra(pils);
+	rrb(pils);
+}

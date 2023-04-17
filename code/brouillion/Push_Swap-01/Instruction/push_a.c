@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:01:40 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 15:55:03 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 16:07:48 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	adjusted_position(int decalage, t_mayon *pil)
 	@brief Prend le premier élément au sommet de b et le met sur a.
 	Ne fait rien si b est vide.
 */
-void	push_a(t_pile *pils)
+void	pa(t_pile *pils)
 {
 	t_mayon	*element;
 
