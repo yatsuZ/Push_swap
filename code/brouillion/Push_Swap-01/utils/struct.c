@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:01:19 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 14:16:37 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 15:38:26 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ t_mayon	*creat_mayon(int value, int position, t_mayon *previous)
 	t_mayon	*new_mayon;
 
 	new_mayon = ft_calloc(1, sizeof(t_mayon));
+	if (error(0, new_mayon, 1))
+	{
+		ft_printf("Dans la fonction \"creat_mayon\" \
+la variable \"new_mayon\" est null.\n\n");
+		return (0);
+	}
 	new_mayon->val = value;
 	new_mayon->index = 0;
 	new_mayon->position = position;
@@ -98,6 +104,12 @@ t_pile	*creat_struct(t_mayon *pile_a)
 
 	len = ft_mayon_size(pile_a);
 	new_pil = ft_calloc(1, sizeof(t_pile));
+	if (error(0, new_pil, 1))
+	{
+		ft_printf("Dans la fonction \"creat_struct\" \
+la variable \"new_pil\" est null.\n\n");
+		return (0);
+	}
 	new_pil->a = pile_a;
 	new_pil->b = NULL;
 	new_pil->len_a = len;

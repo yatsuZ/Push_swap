@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:01:40 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 14:07:26 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 15:55:03 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ void	push_a(t_pile *pils)
 	adjusted_position(-1, pils->b);
 	adjusted_position(1, pils->a);
 	element->next = pils->a;
-	element->next->previous = element;
+	if (element->next)
+		element->next->previous = element;
 	pils->a = element;
 	pils->len_a = pils->len_a + 1;
 	pils->len_b = pils->len_b - 1;

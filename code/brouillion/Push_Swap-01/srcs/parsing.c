@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 19:02:00 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/17 15:05:11 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,24 @@ int	no_double(int val, t_mayon *tete)
 }
 
 /*
+	@param tour int, si il est egale a 1 alors il n pas fais de
+	tour on ignore.
+	@param param pointeur de mayon on doit verifier
+	qu'il ne soit pas NULL.
+	@breif cm = check_memorie cette fonction verifiera que
+	les mallocs on bien etais executer.
+	Si la fonction se nomme si cour c'est pour respecter
+	la norme de 42 pour le nombre de ligne et de character.
+	@return return 0 si il n'y a pas de probleme.
+*/
+int	cm(int tour, t_mayon *p)
+{
+	if (tour <= 1)
+		return (0);
+	return (error(0, p, 1));
+}
+
+/*
 	@brief La fonction "parsing" lit les arguments passés en entrée et renvoie
 	une pile de valeurs.
 	@param z: entier, valeur initiale pour le parcours des arguments inialise
@@ -73,7 +91,7 @@ t_mayon	*parsing(int z, int argc, char **argv)
 	{
 		z++;
 		new_val = ft_atoi(argv[z]);
-		if (error(2, argv[z], 1) || no_double(new_val, tete))
+		if (error(2, argv[z], 1) || no_double(new_val, tete) || cm(z, index))
 			return (free_pile(&tete));
 		if (!tete)
 		{
