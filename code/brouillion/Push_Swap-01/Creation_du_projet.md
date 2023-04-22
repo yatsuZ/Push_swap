@@ -267,10 +267,25 @@ maintenant je dois crée les fonctions et pour caque foncion ils devrons affiche
 Creation FINI : :white_check_mark: .
 
 Verifier que les fonction marche sans leak et sans problème.
-Verification des fonctions : :x:.
+Verification des fonctions : :white_check_mark: .
 
 Crée le fichier Instruction/instructions.c pour metre dans un tableau toutes les fonctions
 d'instruction, pour qu'on puisse tout gerer dans un seul endroit.
+
+et fais.
+
+## Le trie
+
+Pour le Trie je vais l'expliquer dans un autre document.
+mais pour resumer je dois modifier ma structure je dois rajouter 4 attribut dans les noeud.
+un attribut :
+
+- CP = coup placement
+- CR = coup rangement
+- R = rangement
+- CT = Coup Trie
+
+[Explication des algos](Algo.md).
 
 ----------------------------------------
 

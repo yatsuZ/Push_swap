@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 17:04:29 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 17:48:59 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@
 
 /*
 TO DO :
-	1. Cree une pile					| V 30/03/23
-	2. Afficher les elements de la pile	| V 31/03/23
-	3. Faire le parsing					| V 13/04/23
-	4. Faire les fonction d'action		| V 17/04/23
-	5. Teste les fonctions d'action		| V 22/04/23
-	6. Algo pour 3 element				| X
-	7. Algo pour 5 element				| X
-	8. Algo pour plus de 10 elements	| X
-	9. Verifier la norme, testeur, retirer fonction et commentaires inutile | X
+	1. Cree une pile											  | V 30/03/23
+	2. Afficher les elements de la pile							  | V 31/03/23
+	3. Faire le parsing											  | V 13/04/23
+	4. Faire les fonction d'action								  | V 17/04/23
+	5. Teste les fonctions d'action								  | V 22/04/23
+	6. Faire une fonction qui me valide si toute la pile est trie | X
+	7. Algo pour 3 element										  | X
+	8. Algo pour 5 element										  | X
+	9. Algo pour plus de 10 elements							  | X
+	10. Verifier la norme, testeur,
+	retirer fonction et commentaires inutile					  | X
 */
 int	main(int argc, char **argv)
 {
