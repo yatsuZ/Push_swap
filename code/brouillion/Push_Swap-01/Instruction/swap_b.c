@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:09:15 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 19:10:56 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:10:59 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "instruction.h"
 
 /*
 	@param pils conetnant tout le element important.
@@ -22,7 +22,7 @@ void	sb(t_pile *pils)
 	t_mayon	*second;
 	t_mayon	*first;
 
-	if (pils->b == 0 || pils->len_b <= 1)
+	if (!pils || pils->b == 0 || pils->len_b <= 1)
 		return ;
 	first = pils->b;
 	second = pils->b->next;
@@ -33,4 +33,10 @@ void	sb(t_pile *pils)
 	first->next = second->next;
 	second->next = first;
 	pils->b = second;
+}
+
+void	tsb(t_pile *pils)
+{
+	ft_printf("\nTEST Swap B :\n");
+	sb(pils);
 }

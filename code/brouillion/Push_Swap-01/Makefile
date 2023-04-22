@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/04/17 19:16:40 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/04/22 14:51:03 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ UTILS_FILES =	affichage.c		\
 				struct.c
 
 DIR_INSTRUCTION =	./Instruction/
-INSTRUCTION_FILES =	push_a.c						\
+INSTRUCTION_FILES = instruction.c					\
+					push_a.c						\
 					push_b.c						\
 					reverse_rotate_a.c				\
 					reverse_rotate_b.c				\

@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:01:40 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 16:07:48 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:04:31 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "instruction.h"
 
 // Contien juste push_a
 
@@ -39,7 +39,7 @@ void	pa(t_pile *pils)
 {
 	t_mayon	*element;
 
-	if (pils->b == 0)
+	if (!pils || pils->b == 0)
 		return ;
 	element = pils->b;
 	pils->b = element->next;
@@ -55,4 +55,10 @@ void	pa(t_pile *pils)
 	pils->a = element;
 	pils->len_a = pils->len_a + 1;
 	pils->len_b = pils->len_b - 1;
+}
+
+void	tpa(t_pile *pils)
+{
+	ft_printf("\nTEST Push A :\n");
+	pa(pils);
 }

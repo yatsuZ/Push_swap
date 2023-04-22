@@ -264,7 +264,13 @@ maintenant je dois crée les fonctions et pour caque foncion ils devrons affiche
 | `rrb` | reverse rotate b                    | rotation inverse b                      | Décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier.                 |
 | `rrr` | reverse rotate a + reverse rotate b | rotation inverse a + rotation inverse b | rra et rrb en même temps.                                                                                                |
 
-Creation FINI : :x: .
+Creation FINI : :white_check_mark: .
+
+Verifier que les fonction marche sans leak et sans problème.
+Verification des fonctions : :x:.
+
+Crée le fichier Instruction/instructions.c pour metre dans un tableau toutes les fonctions
+d'instruction, pour qu'on puisse tout gerer dans un seul endroit.
 
 ----------------------------------------
 

@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:25:17 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 18:41:16 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:08:46 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "instruction.h"
 
 /*
 	@brief fais rra et rrb en meme temp.
@@ -21,6 +21,14 @@
 */
 void	rrr(t_pile *pils)
 {
+	if (!pils)
+		return ;
 	rra(pils);
 	rrb(pils);
+}
+
+void	trrr(t_pile *pils)
+{
+	ft_printf("\nTEST Reverse rotate A et B:\n");
+	rrr(pils);
 }

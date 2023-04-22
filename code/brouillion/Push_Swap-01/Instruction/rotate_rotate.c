@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:05:53 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 19:01:15 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:10:22 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "instruction.h"
 
 /*
 	@param pils conetnant tout le element important.
@@ -20,6 +20,14 @@
 */
 void	rr(t_pile *pils)
 {
+	if (!pils)
+		return ;
 	ra(pils);
 	rb(pils);
+}
+
+void	trr(t_pile *pils)
+{
+	ft_printf("\nTEST rotate A etB :\n");
+	rr(pils);
 }

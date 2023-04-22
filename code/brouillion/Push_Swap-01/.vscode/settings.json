@@ -2,7 +2,8 @@
     "files.associations": {
         "push_swap.h": "c",
         "stdlib.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "instruction.h": "c"
     },
     "C_Cpp.loggingLevel": "Debug"
 }
