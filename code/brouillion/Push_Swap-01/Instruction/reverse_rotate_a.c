@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:22:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:08:09 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 16:54:50 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "instruction.h"
+#include "../push_swap.h"
 
 /*
 	@brief Permet de recuperer le dernier mayons d'un pile
@@ -23,7 +23,7 @@ t_mayon	*get_last_mayon(t_mayon *pil)
 		return (0);
 	else if (pil->next == 0)
 		return (pil);
-	return get_last_mayon(pil->next);
+	return (get_last_mayon(pil->next));
 }
 
 /*
@@ -53,5 +53,5 @@ void	rra(t_pile *pils)
 void	trra(t_pile *pils)
 {
 	ft_printf("\nTEST Reverse rotate A :\n");
-	rra(pils);
+	use_instruction(2, pils);
 }

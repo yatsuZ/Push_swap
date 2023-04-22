@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:01:40 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:04:31 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:50:35 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "instruction.h"
+#include "../push_swap.h"
 
 // Contien juste push_a
 
@@ -60,5 +60,5 @@ void	pa(t_pile *pils)
 void	tpa(t_pile *pils)
 {
 	ft_printf("\nTEST Push A :\n");
-	pa(pils);
+	use_instruction(0, pils);
 }

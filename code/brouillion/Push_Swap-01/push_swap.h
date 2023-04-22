@@ -6,52 +6,80 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:29:33 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 16:53:47 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
-# include "Instruction/instruction.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
 
-# ifndef T_MAYON
-#  define T_MAYON
 /*
 	@brief Cree la structur d'un mayon.
-	@details Un mayon est un élément de la liste qui contient une valeur entière,
-	un index, une position et des pointeurs vers le maillon suivant et précédent de la liste.
+	@details Un mayon est un élément de la liste qui contient une
+	valeur entière,
+	un index, une position et des pointeurs vers le maillon suivant
+	et précédent de la liste.
 */
 typedef struct s_mayon
 {
-	int				val; // la data qu'il contient, qui est un int
-	int				index; // son index par raport a sa valeur.
-	int				position;// son index parraport son positionement dans la pile.
-	struct s_mayon	*next; // pointeur du mayon suivant. NULL si c'est le dernier.
-	struct s_mayon	*previous;// pointeur du mayon precedent. NULL si c'est le premier.
+	int				val;
+	int				index;
+	int				position;
+	struct s_mayon	*next;
+	struct s_mayon	*previous;
 }	t_mayon;
-#endif
 
-# ifndef T_PILE
-#  define T_PILE
-/*
-	@brief Cree la structur piles. Qui contiendra 2 chaine de mayon,
-	la longuer de chaque mayon et la somme des 2
-	@details piles est un élément qui contient 2 liste la longuer de chaque liste.
-	et la somme total des longuer
-*/
 typedef struct s_pile
 {
-	struct s_mayon	*a;// liste A qui est une pile
-	struct s_mayon	*b;// liste B qui est une pile
-	int				len_a;// longuer de la pile A.
-	int				len_b;// longuer de la pile B.
-	int				len_total;// longuer de la pile A + B.
+	struct s_mayon	*a;
+	struct s_mayon	*b;
+	int				len_a;
+	int				len_b;
+	int				len_total;
 }	t_pile;
-#endif
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
+
+void		adjusted_position(int decalage, t_mayon *pil);
+t_mayon		*get_last_mayon(t_mayon *pil);
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Instructions
+
+void		pa(t_pile *pils);
+void		pb(t_pile *pils);
+void		rra(t_pile *pils);
+void		rrb(t_pile *pils);
+void		rrr(t_pile *pils);
+void		ra(t_pile *pils);
+void		rb(t_pile *pils);
+void		rr(t_pile *pils);
+void		sa(t_pile *pils);
+void		sb(t_pile *pils);
+void		ss(t_pile *pils);
+
+void		use_instruction(int f, t_pile *pils);
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- TEST des Instructions
+
+void		tpa(t_pile *pils);
+void		tpb(t_pile *pils);
+void		trra(t_pile *pils);
+void		trrb(t_pile *pils);
+void		trrr(t_pile *pils);
+void		tra(t_pile *pils);
+void		trb(t_pile *pils);
+void		trr(t_pile *pils);
+void		tsa(t_pile *pils);
+void		tsb(t_pile *pils);
+void		tss(t_pile *pils);
+
+// Fonction de test d'instruction->
+
+void		test_instruction(int f, t_pile *pils);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Affichage
 

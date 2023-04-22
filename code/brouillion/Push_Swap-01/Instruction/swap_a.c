@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:01:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:10:43 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 16:39:39 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "instruction.h"
+#include "../push_swap.h"
 
 /*
 	@param pils conetnant tout le element important.
@@ -38,5 +38,5 @@ void	sa(t_pile *pils)
 void	tsa(t_pile *pils)
 {
 	ft_printf("\nTEST Swap A :\n");
-	sa(pils);
+	use_instruction(8, pils);
 }

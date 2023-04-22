@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:23:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:08:02 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 16:54:28 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "instruction.h"
+#include "../push_swap.h"
 
 /*
 	@brief Décale d’une position vers le bas tous les élements de la pile b.
@@ -22,7 +22,7 @@ void	rrb(t_pile *pils)
 {
 	t_mayon	*last;
 
-	if (!pils|| pils->b == 0 || pils->len_b <= 1)
+	if (!pils || pils->b == 0 || pils->len_b <= 1)
 		return ;
 	last = get_last_mayon(pils->b);
 	if (last->previous)
@@ -39,5 +39,5 @@ void	rrb(t_pile *pils)
 void	trrb(t_pile *pils)
 {
 	ft_printf("\nTEST Reverse rotate B :\n");
-	rrb(pils);
+	use_instruction(3, pils);
 }

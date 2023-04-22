@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:02:59 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:07:12 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/22 15:57:38 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "instruction.h"
+#include "../push_swap.h"
 
 /*
 	@param pils pointeur de la structure "t_pile" cette structure contiens
@@ -41,8 +41,9 @@ void	pb(t_pile *pils)
 	pils->len_a = pils->len_a - 1;
 }
 
+// Check valide.
 void	tpb(t_pile *pils)
 {
 	ft_printf("\nTEST Push B :\n");
-	pb(pils);
+	use_instruction(1, pils);
 }
