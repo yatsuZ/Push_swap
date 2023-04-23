@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:01:19 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 15:38:26 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/23 17:48:58 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	put_index(t_mayon *previous, t_mayon *current)
 		return ;
 	if (previous->val > current->val)
 		previous->index++;
-	else
+	else if (previous->index >= current->index)
 		current->index = previous->index + 1;
 	put_index(previous->previous, current);
 }

@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:53:47 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/23 18:29:43 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_pile
 
 void		adjusted_position(int decalage, t_mayon *pil);
 t_mayon		*get_last_mayon(t_mayon *pil);
+t_mayon		*find_index(t_pile *pils, int option);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Instructions
 

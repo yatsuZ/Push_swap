@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 17:07:59 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/23 18:51:57 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,14 @@ void	print_tab(int valeur, int option)
 	{
 		if (valeur < 10 && valeur > -1)
 			ft_printf(" %d\t\t\t|", valeur);
-		else if (valeur < 100 && valeur > -10)
+		else if (valeur <= 1000 && valeur >= -1000)
 			ft_printf(" %d\t\t|", valeur);
 		else if (valeur <= -1000000000)
 			ft_printf(" %d", valeur);
 		else if (valeur <= -100000000 || valeur >= 1000000000)
 			ft_printf(" %d|", valeur);
 		else
-			ft_printf(" %d\t\t|", valeur);
+			ft_printf(" %d\t|", valeur);
 	}
 	else
 		ft_printf(" %d\t\t|", valeur);
@@ -114,8 +114,8 @@ void	affichage_struct_all(t_pile *s)
 	if (!(s))
 		return ((void) ft_printf("~~~~~~~ NULL ~~~~~~~\n"));
 	ft_printf("Nombre de mayon total= %d\n\n", s->len_total);
-	ft_printf("--------------------- PILE A :\n");
+	ft_printf("Nombre de mayon = %d\t------------- PILE A :\n", s->len_a);
 	affichage_pile(s->a);
-	ft_printf("--------------------- PILE B :\n");
+	ft_printf("Nombre de mayon = %d\t------------- PILE B :\n", s->len_b);
 	affichage_pile(s->b);
 }

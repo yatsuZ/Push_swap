@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:26:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:55:06 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/23 18:36:43 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,36 @@ void	use_instruction(int f, t_pile *pils)
 		return ;
 	}
 	g_instruction[f](pils);
+}
+
+/*
+	@param pils structure de la pile.
+	@param option int.
+	Si 0 cherche le plus petit index.
+	Si 1 cherche la medianne.
+	Si 2 cherche le plus grand index.
+	@brief permet de chercher les index import d'une pile.
+	@return Return NULL si la len
+	est inferieurre a 2 ou pointeur NULL.
+*/
+t_mayon	*find_index(t_pile *pils, int option)
+{
+	t_mayon	*current;
+	int		median;
+
+	if (pils == NULL || pils->len_total <= 2)
+		return (NULL);
+	median = (pils->len_total - 1) / 2;
+	current = pils->a;
+	while (current)
+	{
+		if (option == 0 && current->index == 0)
+			return (current);
+		else if (option == 1 && current->index == median)
+			return (current);
+		else if (option == 2 && current->index == (pils->len_total - 1))
+			return (current);
+		current = current->next;
+	}
+	return (NULL);
 }
