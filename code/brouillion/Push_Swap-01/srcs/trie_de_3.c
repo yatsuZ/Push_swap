@@ -6,12 +6,15 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:43:28 by yatsu             #+#    #+#             */
-/*   Updated: 2023/04/26 08:31:19 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 16:22:04 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+// @param position -> int de la position du mayon
+// @param len -> la longuer de la pile
+// @return un int positive ou negatife si negatife il faut utilise des rr.
 int	cout_placement(int position, int len)
 {
 	if (position > len / 2)
@@ -19,21 +22,31 @@ int	cout_placement(int position, int len)
 	return (position);
 }
 
-void	faire_ra_ou_rra(t_pile *p, int p_min)
+// @brief Fais le choix le plus optimal entre ra et rra
+// @param p -> la pile
+// @param ab si 0 choisi la pile B sinon A
+// @param position position de l'element
+void	faire_r_ou_rr(t_pile *p, int position, int ab)
 {
 	int	res;
 
-	res = cout_placement(p_min, p->len_a);
+	res = cout_placement(position, p->len_a);
 	while (res)
 	{
 		if (res < 0)
 		{
-			use_instruction(TRUE, p, 1, RRA);
+			if (ab)
+				use_instruction(TRUE, p, 1, RRA);
+			else
+				use_instruction(TRUE, p, 1, RRB);
 			res++;
 		}
 		else
 		{
-			use_instruction(TRUE, p, 1, RA);
+			if (ab)
+				use_instruction(TRUE, p, 1, RA);
+			else
+				use_instruction(TRUE, p, 1, RB);
 			res--;
 		}
 	}
@@ -56,7 +69,7 @@ void	p2_trie_p3(t_pile *pil, int p_min)
 	if (pil->len_total == 2 || p_min == -2)
 		return (use_instruction(TRUE, pil, 1, SA));
 	else if (p_min > 0)
-		return (faire_ra_ou_rra(pil, p_min));
+		return (faire_r_ou_rr(pil, p_min, PILE_A));
 	else if (p_min == -3)
 		return (use_instruction(TRUE, pil, 2, RRA, SA));
 	else if (p_min == -1)

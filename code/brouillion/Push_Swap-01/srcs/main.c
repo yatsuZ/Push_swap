@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 08:40:40 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 17:32:55 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ TO DO :
 	Recuper le plus grand petit dindex et median.				  | V 23/04/23
 	6.5 Faire que je peux metre une liste dinstruction + affichage| V 26/04/23
 	7. Algo pour 3 element										  | V 26/04/23
+	7.5 Corriger le fait quon peut metre des arguments+visualiseur| X
 	8. Algo pour 5 element										  | X
 	9. Algo pour plus de 10 elements							  | X
 	10. Verifier la norme, testeur,

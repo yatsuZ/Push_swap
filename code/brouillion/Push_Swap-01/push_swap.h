@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 06:51:54 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 16:25:32 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 // Constate 
 # define TRUE 1
 # define FALSE 0
+# define PILE_A 1
+# define PILE_B 0
 # define PA 0
 # define PB 1
 # define RRA 2
@@ -44,6 +46,10 @@ typedef struct s_mayon
 	int				val;
 	int				index;
 	int				position;
+	int				cplacement;
+	int				crangement;
+	int				rangement;
+	int				trie;
 	struct s_mayon	*next;
 	struct s_mayon	*previous;
 }	t_mayon;

@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:01:19 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 06:44:15 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 16:30:18 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,10 @@ la variable \"new_mayon\" est null.\n\n");
 	}
 	new_mayon->val = value;
 	new_mayon->index = 0;
+	new_mayon->trie = 0;
+	new_mayon->cplacement = 0;
+	new_mayon->crangement = 0;
+	new_mayon->rangement = 0;
 	new_mayon->position = position;
 	new_mayon->previous = previous;
 	new_mayon->next = 0;

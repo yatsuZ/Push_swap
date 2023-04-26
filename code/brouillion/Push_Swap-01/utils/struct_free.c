@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:33:05 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 17:43:28 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 16:29:47 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ void	*free_pile(t_mayon **s)
 	(*s)->index = 0;
 	(*s)->position = 0;
 	(*s)->val = 0;
+	(*s)->trie = 0;
+	(*s)->cplacement = 0;
+	(*s)->crangement = 0;
+	(*s)->rangement = 0;
 	(*s)->previous = NULL;
 	free_pile(&(*s)->next);
 	(*s)->next = NULL;

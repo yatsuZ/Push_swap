@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convertisseur.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 19:20:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 17:21:14 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 17:28:22 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,13 @@ int	verif_overflow(long val_long)
 	@return Return 0 si on peut le transformer en int sinon 1 si erreur de syntax,
 	2 si problème d'overflow.
 */
-int	ft_atoi_verif(const char *nptr)
+int	ft_atoi_verif(char *nptr)
 {
 	long	nbr;
 	int		signe;
 	size_t	i;
 
+	ft_printf("Str = %s\n", nptr);
 	i = 0;
 	nbr = 0;
 	signe = 1;
@@ -85,7 +86,7 @@ int	id_error_2(void *p, int affichage)
 {
 	int	retour;
 
-	retour = ft_atoi_verif((const char *) p);
+	retour = ft_atoi_verif((char *)p);
 	if (affichage && retour)
 		return (print_text_error(retour + 2), 1);
 	return (0);

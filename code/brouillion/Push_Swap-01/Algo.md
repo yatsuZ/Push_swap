@@ -45,9 +45,11 @@ converge vers l'ID 3 qui est le plus cour et on se fie par raport a quelle eleme
 
 ## Pour plus de 3 element
 
-nous allons seulement laissée dans la pile a 3 element et tout le reste dans la pile b.
+Nous transvaseront tout les mayon de la pile A dans B.
 
-Dans la pile a il y auras le plus petit le plus grand et la moyenne des elements trier.
+Sauf le plus petit, la median et le plus grand ou (Tant que la pile A n'est pas trier).
+
+Crée un fonction qui fais cette etape : :x: .
 
 Ensuite nous aurons plus qu'a faire pour chaque somet de la pile b bien placer les elements pour qu'il soit range
 Exemple :
