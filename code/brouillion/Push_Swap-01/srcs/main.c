@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 05:10:52 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 05:15:19 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ int	main(int argc, char **argv)
 	t_mayon	*a;
 	int		res;
 
+	if (argc == 1)
+		return (0);
 	a = parsing(0, argc, argv);
 	if (error(0, a, 1))
 		return (1);

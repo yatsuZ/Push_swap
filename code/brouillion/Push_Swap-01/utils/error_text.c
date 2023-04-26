@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_text.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:18:20 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/13 17:34:31 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 05:16:48 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Vous avez mis un 0 suivie d'autre caractere ce qui est une syntax non \
 permise.\n",
 	"ID error 4 : Overflow la valeur n'est pas compris dans les int\n",
 	"ID error 5 : Erreur il y a deux fois la meme valeur dans les arguments.\
-\n"
+\n",
 };
 
 // @brief Affiche "Error\n" sur la sortie d'erreur.
