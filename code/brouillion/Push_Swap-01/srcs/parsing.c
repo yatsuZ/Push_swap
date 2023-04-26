@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/17 15:05:11 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 06:43:44 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_mayon	*parsing(int z, int argc, char **argv)
 	{
 		z++;
 		new_val = ft_atoi(argv[z]);
-		if (error(2, argv[z], 1) || no_double(new_val, tete) || cm(z, index))
+		if (error(2, argv[z], TRUE) || no_double(new_val, tete) || cm(z, index))
 			return (free_pile(&tete));
 		if (!tete)
 		{

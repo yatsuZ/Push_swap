@@ -309,15 +309,31 @@ Verification des fonctions : :white_check_mark: .
 
 ## Le trie
 
-Pour le Trie je vais l'expliquer dans un autre document.
-mais pour resumer je dois modifier ma structure je dois rajouter 4 attribut dans les noeud.
-un attribut :
 
-- CP = coup placement
-- CR = coup rangement
-- R = rangement
-- CT = Coup Trie
+Concernant monde code j'ai crée des régles et des fonction specifique.
 
+Les paramétre importante a prendre son :
+
+1. Si la pile est deja Trier et Rangée ou juste Trier ou si elle est en bordel.
+2. Le nombre de mayon
+
+> Trier = Que tout les index se suive sauf entre le dirnier et premier.
+>
+> Ranger = Que chaque mayon on le meme mayon et index.
+
+Au depart c'est une fois que ma pile est crée c'est,
+De verifier si elle est deja Trier et Ranger alors ne rien faire.
+Sinon je dois faire des actions.
+Si elle est deja trier je dois juste faire des Rotations, peut importante la longuer.
+Sinon Je dois madapter en fonction de la longuer.
+
+Et du coup pour prendre ce parametre j'ai une fonction qui me donne 0 si tout est trier et ranger.
+Si la pile est trier et ranger alors nous avons rien a faire et liberons le terminal
+Si La pile est juste trier alors la fonction me donne l'index du plus petit mayon.
+
+Puis si c'est aucun des 2 cas nous devons addopter des strategie différente pour resoudre les différent cas.
+
+Je developpe la resolution des problème dans ce doccument :
 [Explication des algos](Algo.md).
 
 ----------------------------------------

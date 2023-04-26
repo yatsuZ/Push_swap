@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 06:00:42 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 06:51:54 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+
+// Constate 
+# define TRUE 1
+# define FALSE 0
+# define PA 0
+# define PB 1
+# define RRA 2
+# define RRB 3
+# define RRR 4
+# define RA 5
+# define RB 6
+# define RR 7
+# define SA 8
+# define SB 9
+# define SS 10
 
 /*
 	@brief Cree la structur d'un mayon.
@@ -45,7 +60,7 @@ typedef struct s_pile
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction de Trie
 
 int			validation_de_trie(t_pile *pils, int decallage);
-void		P2_Trier_P3(t_pile *pil, int res_trie);
+void		p2_trie_p3(t_pile *pil, int res_trie);
 void		trie_generale(t_pile *pil, int res_trie);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile

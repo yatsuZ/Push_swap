@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:01:19 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/23 17:48:58 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 06:44:15 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ t_pile	*creat_struct(t_mayon *pile_a)
 
 	len = ft_mayon_size(pile_a);
 	new_pil = ft_calloc(1, sizeof(t_pile));
-	if (error(0, new_pil, 1))
+	if (error(0, new_pil, TRUE))
 	{
 		ft_printf("Dans la fonction \"creat_struct\" \
 la variable \"new_pil\" est null.\n\n");
