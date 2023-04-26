@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 05:15:19 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 06:03:24 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@
 	@brief Fonction qui return 0 si la Pile A est totallement trier +
 	Bien ranger.
 	-1 si la pile A n'est pas complete ou qu'elle n'est pas trier.
-	ou autre chose si la pile est trier mais pas ranger
+	ou la position du noeud ayant la plus petite valeur
+	Si la pile est trier mais pas ranger.
 	@return -1 si non trier ou pile a non complete.
-	0 si trier et sans decallage ou pointeur NULL.
-	X si trier mais decalage.
+	0 si trier et sans position_min ou pointeur NULL.
+	Position du plus petit Noeud si trier mais decalage.
 	@param pils la structure pile.
-	@param decallage int metre decallage a 0 cest pour economise des lignes.
+	@param position_min int metre position_min a 0 on pars du postulat
+	que le plus petit est deja range. On le mets en param pour economiser
+	des lignes.
 */
-int	validation_de_trie(t_pile *pils, int decallage)
+int	validation_de_trie(t_pile *pils, int position_min)
 {
 	int		i;
 	t_mayon	*current;
@@ -42,7 +45,7 @@ int	validation_de_trie(t_pile *pils, int decallage)
 		{
 			if (current->index == 0)
 			{
-				decallage = current->position;
+				position_min = current->position;
 				i = 0;
 			}
 			else
@@ -51,7 +54,7 @@ int	validation_de_trie(t_pile *pils, int decallage)
 		i++;
 		current = current->next;
 	}
-	return (decallage);
+	return (position_min);
 }
 
 /*
@@ -75,7 +78,7 @@ int	main(int argc, char **argv)
 {
 	t_pile	*pils;
 	t_mayon	*a;
-	int		res;
+	int		p_min;
 
 	if (argc == 1)
 		return (0);
@@ -85,11 +88,11 @@ int	main(int argc, char **argv)
 	pils = creat_struct(a);
 	if (error(0, pils, 1))
 		return (1);
-	res = validation_de_trie(pils, 0);
-	if (res && pils->len_total <= 3)
-		trie_de_3_ou_moin(pils, res);
-	else if (res)
-		trie_generale(pils, res);
+	p_min = validation_de_trie(pils, 0);
+	if (p_min || pils->len_total <= 3)
+		P2_Trier_P3(pils, p_min);
+	else if (p_min)
+		trie_generale(pils, p_min);
 	free_struct(&pils);
 	a = NULL;
 	return (0);

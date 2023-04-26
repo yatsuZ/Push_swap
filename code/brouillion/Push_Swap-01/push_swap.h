@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 04:02:54 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 06:00:42 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_pile
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction de Trie
 
 int			validation_de_trie(t_pile *pils, int decallage);
-void		trie_de_3_ou_moin(t_pile *pil, int res_trie);
+void		P2_Trier_P3(t_pile *pil, int res_trie);
 void		trie_generale(t_pile *pil, int res_trie);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
