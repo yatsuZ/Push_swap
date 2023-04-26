@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 03:56:35 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 04:05:39 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,13 @@ int	validation_de_trie(t_pile *pils, int decallage)
 	return (decallage);
 }
 
-	// ft_printf("\nLe mayon le plus petit : \n");
-	// affichage_mayon(find_index(pils, 0));
-	// ft_printf("\nLe mayon Median : \n");
-	// affichage_mayon(find_index(pils, 1));
-	// ft_printf("\nLe mayon Le plus grand : \n");
-	// affichage_mayon(find_index(pils, 2));
-
 void	test_instruction(t_pile *p)
 {
 	use_instruction(0, p, 2, 1, 1);
+	affichage_struct_all(p);
 	use_instruction(1, p, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+	affichage_struct_all(p);
+
 }
 
 /*
@@ -77,6 +73,7 @@ TO DO :
 	6. Faire une fonction qui me valide si toute la pile est trie,
 	trier est ranger ou non.
 	Recuper le plus grand petit dindex et median.				  | V 23/04/23
+	6.5 Faire que je peux metre une liste dinstruction + affichage| V 26/04/23
 	7. Algo pour 3 element										  | X
 	8. Algo pour 5 element										  | X
 	9. Algo pour plus de 10 elements							  | X
@@ -91,7 +88,6 @@ int	main(int argc, char **argv)
 	a = parsing(0, argc, argv);
 	if (error(0, a, 1))
 		return (1);
-	
 	pils = creat_struct(a);
 	if (error(0, pils, 1))
 		return (1);

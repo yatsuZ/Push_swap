@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 03:07:04 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 04:02:54 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ void		sa(t_pile *pils, int affichage);
 void		sb(t_pile *pils, int affichage);
 void		ss(t_pile *pils, int affichage);
 
-void		use_instruction(int affichage, t_pile *pils, int nbr_instruction, ...);
+void		use_instruction(int affichage, t_pile *pils, \
+int nbr_instruction, ...);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Affichage
 

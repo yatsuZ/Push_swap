@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:26:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 03:54:39 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 04:08:28 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static void (*const	g_instruction[])(t_pile *pils, int affichage) = {
 	&ss
 };
 
-
 /*
 	@brief Fonction qui fais plusieur instruction.
 	@param affichage Si different de 0 affiche le message "pa"
@@ -57,6 +56,8 @@ void	use_instruction(int affichage, t_pile *pils, int nbr_instruction, ...)
 		if (affichage)
 			ft_printf("---\n");
 		g_instruction[va_arg(all_instruction, int)](pils, affichage);
+		if (affichage)
+			affichage_struct_all(pils);
 	}
 }
 

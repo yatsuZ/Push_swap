@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 01:16:28 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 04:20:28 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ void	affichage_mayon(t_mayon *m)
 		return ;
 	ft_printf("\t|");
 	print_tab(m->position, 1);
-	ft_printf(" %p\t|", m);
+	ft_printf(" %p\t\t\t|", m);
 	print_tab(m->val, 1);
 	print_tab(m->index, 0);
 	if (m->previous)
-		ft_printf(" %p\t|", m->previous);
+		ft_printf(" %p\t\t\t|", m->previous);
 	else
 		ft_printf(" %p\t\t\t\t|", m->previous);
 	ft_printf(" %p\n", m->next);
@@ -110,7 +110,7 @@ void	affichage_pile(t_mayon *p)
 */
 void	affichage_struct_all(t_pile *s)
 {
-	ft_printf("Affichage de toute la structure \"t_pile\":\n\n");
+	ft_printf("\n\n");
 	if (!(s))
 		return ((void) ft_printf("~~~~~~~ NULL ~~~~~~~\n"));
 	ft_printf("Nombre de mayon total= %d\n\n", s->len_total);
