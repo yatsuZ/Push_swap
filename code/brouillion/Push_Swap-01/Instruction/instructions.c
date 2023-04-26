@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:26:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 04:08:28 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 05:11:32 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,7 @@ void	use_instruction(int affichage, t_pile *pils, int nbr_instruction, ...)
 	va_start(all_instruction, nbr_instruction);
 	while (nbr_instruction--)
 	{
-		if (affichage)
-			ft_printf("---\n");
 		g_instruction[va_arg(all_instruction, int)](pils, affichage);
-		if (affichage)
-			affichage_struct_all(pils);
 	}
 }
 

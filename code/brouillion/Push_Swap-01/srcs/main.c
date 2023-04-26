@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 04:05:39 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 05:10:52 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,6 @@ int	validation_de_trie(t_pile *pils, int decallage)
 	return (decallage);
 }
 
-void	test_instruction(t_pile *p)
-{
-	use_instruction(0, p, 2, 1, 1);
-	affichage_struct_all(p);
-	use_instruction(1, p, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-	affichage_struct_all(p);
-
-}
-
 /*
 TO DO :
 	1. Cree une pile											  | V 30/03/23
@@ -84,6 +75,7 @@ int	main(int argc, char **argv)
 {
 	t_pile	*pils;
 	t_mayon	*a;
+	int		res;
 
 	a = parsing(0, argc, argv);
 	if (error(0, a, 1))
@@ -91,7 +83,11 @@ int	main(int argc, char **argv)
 	pils = creat_struct(a);
 	if (error(0, pils, 1))
 		return (1);
-	test_instruction(pils);
+	res = validation_de_trie(pils, 0);
+	if (res && pils->len_total <= 3)
+		trie_de_3_ou_moin(pils, res);
+	else if (res)
+		trie_generale(pils, res);
 	free_struct(&pils);
 	a = NULL;
 	return (0);

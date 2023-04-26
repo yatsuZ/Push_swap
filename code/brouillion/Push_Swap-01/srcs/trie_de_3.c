@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:43:28 by yatsu             #+#    #+#             */
-/*   Updated: 2023/04/26 04:03:54 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/26 05:12:05 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 */
 void	trie_de_3_ou_moin(t_pile *pil, int res_trie)
 {
-	ft_printf("Trie de 3 element ou moin : \n\n");
 	if (!pil || !res_trie)
 		return ;
 	if (pil->len_total == 2)
