@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:26:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/23 18:36:43 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:54:39 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 */
 
 // @brief Tableau de mes fonctions d'instruction.
-static void (*const	g_instruction[])(t_pile *pils) = {
+static void (*const	g_instruction[])(t_pile *pils, int affichage) = {
 	&pa,
 	&pb,
 	&rra,
@@ -37,39 +37,27 @@ static void (*const	g_instruction[])(t_pile *pils) = {
 	&ss
 };
 
-// @brief Tableau de mes fonctions d'instruction, Test.
-static void (*const	g_test_instruction[])(t_pile *pils) = {
-	&tpa,
-	&tpb,
-	&trra,
-	&trrb,
-	&trrr,
-	&tra,
-	&trb,
-	&trr,
-	&tsa,
-	&tsb,
-	&tss
-};
 
-// fonction qui verifie que chaque fonction marche
-void	test_instruction(int f, t_pile *pils)
+/*
+	@brief Fonction qui fais plusieur instruction.
+	@param affichage Si different de 0 affiche le message "pa"
+	etc...
+	@param pils structure pile.
+	@param nbr_instruction dire le nombre dinstruction qui suit tres important.
+	@param ... suite de nombre entre 0 et 10 pour chaque commande.
+	@return rien juste il execute les instruction mis en parametre a la suite.
+*/
+void	use_instruction(int affichage, t_pile *pils, int nbr_instruction, ...)
 {
-	if (f > 10 || f < 0)
-		ft_printf("f = %d. f doit etre compris entre 0 et 10.\n", f);
-	else
-		g_test_instruction[f](pils);
-	affichage_struct_all(pils);
-}
+	va_list	all_instruction;
 
-void	use_instruction(int f, t_pile *pils)
-{
-	if (f > 10 || f < 0)
+	va_start(all_instruction, nbr_instruction);
+	while (nbr_instruction--)
 	{
-		ft_printf("f = %d. f doit etre compris entre 0 et 10.\n", f);
-		return ;
+		if (affichage)
+			ft_printf("---\n");
+		g_instruction[va_arg(all_instruction, int)](pils, affichage);
 	}
-	g_instruction[f](pils);
 }
 
 /*

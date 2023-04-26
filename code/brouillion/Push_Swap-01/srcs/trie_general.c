@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate_reverse_rotate.c                    :+:      :+:    :+:   */
+/*   trie_general.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 18:25:17 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 03:47:58 by yatsu            ###   ########.fr       */
+/*   Created: 2023/04/26 01:55:40 by yatsu             #+#    #+#             */
+/*   Updated: 2023/04/26 02:16:35 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/*
-	@brief fais rra et rrb en meme temp.
-	Décale d’une position vers le bas tous les élements de
-	la pile a et b.
-	Le dernier élément devient le premier.
-	@param pils conetnant tout le element important.
-*/
-void	rrr(t_pile *pils, int affichage)
+void	trie_generale(t_pile *pil, int res_trie)
 {
-	if (affichage)
-		ft_printf("rrr\n");
-	rra(pils, 0);
-	rrb(pils, 0);
+	ft_printf("Trie generale : \n\n");
+	if (!pil)
+		return ;
+	if (res_trie)
+		return ;
 }

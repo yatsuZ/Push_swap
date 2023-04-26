@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:01:54 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:39:39 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:26:31 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 	@brief Intervertit les 2 premiers éléments au sommet de la pile a.
 	Ne fait rien s’il n’y en a qu’un ou aucun.
 */
-void	sa(t_pile *pils)
+void	sa(t_pile *pils, int affichage)
 {
 	t_mayon	*second;
 	t_mayon	*first;
 
 	if (!pils || pils->a == 0 || pils->len_a <= 1)
 		return ;
+	if (affichage)
+		ft_printf("sa\n");
 	first = pils->a;
 	second = pils->a->next;
 	first->position = 1;
@@ -33,10 +35,4 @@ void	sa(t_pile *pils)
 	first->next = second->next;
 	second->next = first;
 	pils->a = second;
-}
-
-void	tsa(t_pile *pils)
-{
-	ft_printf("\nTEST Swap A :\n");
-	use_instruction(8, pils);
 }

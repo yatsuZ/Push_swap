@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
+#    By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/04/22 15:46:58 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/04/26 02:12:39 by yatsu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 DIR_SRC =		./srcs/
 SRC_FILES =		main.c			\
-				parsing.c
+				parsing.c		\
+				trie_de_3.c		\
+				trie_general.c
 
 DIR_UTILS =		./utils/
 UTILS_FILES =	affichage.c		\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:22:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:54:50 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:23:54 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ t_mayon	*get_last_mayon(t_mayon *pil)
 	@param pils pointeur de la structure piles contenan tout.
 	@return rien.
 */
-void	rra(t_pile *pils)
+void	rra(t_pile *pils, int affichage)
 {
 	t_mayon	*last;
 
+	if (affichage)
+		ft_printf("rra\n");
 	if (!pils || pils->a == 0 || pils->len_a <= 1)
 		return ;
 	last = get_last_mayon(pils->a);
@@ -48,10 +50,4 @@ void	rra(t_pile *pils)
 	if (last->next)
 		last->next->previous = last;
 	pils->a = last;
-}
-
-void	trra(t_pile *pils)
-{
-	ft_printf("\nTEST Reverse rotate A :\n");
-	use_instruction(2, pils);
 }

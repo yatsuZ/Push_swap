@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_rotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:05:53 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:39:36 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:47:49 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,10 @@
 	Décale d’une position vers le haut tous les élements de la pile a et b.
 	Le premier élément devient le dernier.
 */
-void	rr(t_pile *pils)
+void	rr(t_pile *pils, int affichage)
 {
-	if (!pils)
-		return ;
-	ra(pils);
-	rb(pils);
-}
-
-void	trr(t_pile *pils)
-{
-	ft_printf("\nTEST rotate A etB :\n");
-	use_instruction(7, pils);
+	if (affichage)
+		ft_printf("rr\n");
+	ra(pils, 0);
+	rb(pils, 0);
 }

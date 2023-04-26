@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/23 19:24:13 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:56:35 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ int	validation_de_trie(t_pile *pils, int decallage)
 	// ft_printf("\nLe mayon Le plus grand : \n");
 	// affichage_mayon(find_index(pils, 2));
 
+void	test_instruction(t_pile *p)
+{
+	use_instruction(0, p, 2, 1, 1);
+	use_instruction(1, p, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+}
+
 /*
 TO DO :
 	1. Cree une pile											  | V 30/03/23
@@ -81,23 +87,15 @@ int	main(int argc, char **argv)
 {
 	t_pile	*pils;
 	t_mayon	*a;
-	int		res;
 
 	a = parsing(0, argc, argv);
 	if (error(0, a, 1))
 		return (1);
+	
 	pils = creat_struct(a);
 	if (error(0, pils, 1))
 		return (1);
-	res = validation_de_trie(pils, 0);
-	if (!res)
-		ft_printf("\nVVVV La Pile est Parfaitement ranger trier : ");
-	else if (res == -1)
-		ft_printf("\nXXXX C'est pas trier : ");
-	else
-		ft_printf("\n~~~~~La Pile est trier.\n\
-Mais le plus petit element a un decalage de %d element : ", res);
-	affichage_struct_all(pils);
+	test_instruction(pils);
 	free_struct(&pils);
 	a = NULL;
 	return (0);

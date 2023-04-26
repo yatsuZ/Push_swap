@@ -1,0 +1,21 @@
+\\ Ce que je doit metre dans le main remplacer par le test
+	res = validation_de_trie(pils, 0);
+	if (res && pils->len_total <= 3)
+		trie_de_3_ou_moin(pils, res);
+	else if (res)
+		trie_generale(pils, res);
+	
+	if (validation_de_trie(pils, 0) == 0)
+		ft_printf("\nC trier.\n");
+	else
+		ft_printf("\nC n'est pas trier.\n");
+	// affichage_struct_all(pils);
+
+/////////
+
+	// ft_printf("\nLe mayon le plus petit : \n");
+	// affichage_mayon(find_index(pils, 0));
+	// ft_printf("\nLe mayon Median : \n");
+	// affichage_mayon(find_index(pils, 1));
+	// ft_printf("\nLe mayon Le plus grand : \n");
+	// affichage_mayon(find_index(pils, 2));

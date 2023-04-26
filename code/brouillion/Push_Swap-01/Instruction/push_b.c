@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:02:59 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:57:38 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:47:48 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@
 	@brief Prend le premier élément au sommet de a et le met sur b.
 	Ne fait rien si a est vide.
 */
-void	pb(t_pile *pils)
+void	pb(t_pile *pils, int affichage)
 {
 	t_mayon	*element;
 
 	if (!pils || pils->a == 0)
 		return ;
+	if (affichage)
+		ft_printf("pb\n");
 	element = pils->a;
 	pils->a = element->next;
 	if (pils->a)
@@ -39,11 +41,4 @@ void	pb(t_pile *pils)
 	pils->b = element;
 	pils->len_b = pils->len_b + 1;
 	pils->len_a = pils->len_a - 1;
-}
-
-// Check valide.
-void	tpb(t_pile *pils)
-{
-	ft_printf("\nTEST Push B :\n");
-	use_instruction(1, pils);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/23 18:29:43 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:07:04 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ typedef struct s_pile
 	int				len_total;
 }	t_pile;
 
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction de Trie
+
+int			validation_de_trie(t_pile *pils, int decallage);
+void		trie_de_3_ou_moin(t_pile *pil, int res_trie);
+void		trie_generale(t_pile *pil, int res_trie);
+
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
 
 void		adjusted_position(int decalage, t_mayon *pil);
@@ -50,37 +56,19 @@ t_mayon		*find_index(t_pile *pils, int option);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Instructions
 
-void		pa(t_pile *pils);
-void		pb(t_pile *pils);
-void		rra(t_pile *pils);
-void		rrb(t_pile *pils);
-void		rrr(t_pile *pils);
-void		ra(t_pile *pils);
-void		rb(t_pile *pils);
-void		rr(t_pile *pils);
-void		sa(t_pile *pils);
-void		sb(t_pile *pils);
-void		ss(t_pile *pils);
+void		pa(t_pile *pils, int affichage);
+void		pb(t_pile *pils, int affichage);
+void		rra(t_pile *pils, int affichage);
+void		rrb(t_pile *pils, int affichage);
+void		rrr(t_pile *pils, int affichage);
+void		ra(t_pile *pils, int affichage);
+void		rb(t_pile *pils, int affichage);
+void		rr(t_pile *pils, int affichage);
+void		sa(t_pile *pils, int affichage);
+void		sb(t_pile *pils, int affichage);
+void		ss(t_pile *pils, int affichage);
 
-void		use_instruction(int f, t_pile *pils);
-
-//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- TEST des Instructions
-
-void		tpa(t_pile *pils);
-void		tpb(t_pile *pils);
-void		trra(t_pile *pils);
-void		trrb(t_pile *pils);
-void		trrr(t_pile *pils);
-void		tra(t_pile *pils);
-void		trb(t_pile *pils);
-void		trr(t_pile *pils);
-void		tsa(t_pile *pils);
-void		tsb(t_pile *pils);
-void		tss(t_pile *pils);
-
-// Fonction de test d'instruction->
-
-void		test_instruction(int f, t_pile *pils);
+void		use_instruction(int affichage, t_pile *pils, int nbr_instruction, ...);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Affichage
 

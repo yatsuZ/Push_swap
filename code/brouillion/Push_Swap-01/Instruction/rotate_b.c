@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:04:59 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:39:31 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:23:15 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 	@brief Décale d’une position vers le haut tous les élements de la pile b.
 	Le premier élément devient le dernier.
 */
-void	rb(t_pile *pils)
+void	rb(t_pile *pils, int affichage)
 {
 	t_mayon	*first;
 	t_mayon	*last;
 
+	if (affichage)
+		ft_printf("rb\n");
 	if (!pils || pils->b == 0 || pils->len_b <= 1)
 		return ;
 	last = get_last_mayon(pils->b);
@@ -33,10 +35,4 @@ void	rb(t_pile *pils)
 	first->previous = last;
 	first->position = last->position + 1;
 	adjusted_position(-1, pils->b);
-}
-
-void	trb(t_pile *pils)
-{
-	ft_printf("\nTEST rotate B :\n");
-	use_instruction(6, pils);
 }

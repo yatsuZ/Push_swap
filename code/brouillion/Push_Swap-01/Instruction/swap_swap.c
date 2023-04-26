@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:03:15 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:39:46 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:27:04 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,10 @@
 	Si les 2 pile son vide ne fais rien.
 	Si une des 2 piles est vide alors ne ais rien avec la pile vide.
 */
-void	ss(t_pile *pils)
+void	ss(t_pile *pils, int affichage)
 {
-	if (!pils)
-		return ;
-	sa(pils);
-	sb(pils);
-}
-
-void	tss(t_pile *pils)
-{
-	ft_printf("\nTEST Swap A et B :\n");
-	use_instruction(10, pils);
+	if (affichage)
+		ft_printf("ss\n");
+	sa(pils, 0);
+	sb(pils, 0);
 }

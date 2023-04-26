@@ -264,15 +264,48 @@ maintenant je dois crée les fonctions et pour caque foncion ils devrons affiche
 | `rrb` | reverse rotate b                    | rotation inverse b                      | Décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier.                 |
 | `rrr` | reverse rotate a + reverse rotate b | rotation inverse a + rotation inverse b | rra et rrb en même temps.                                                                                                |
 
-Creation FINI : :white_check_mark: .
+dans mon code voila comment son ranger mes inscrtuction :
 
-Verifier que les fonction marche sans leak et sans problème.
-Verification des fonctions : :white_check_mark: .
+| Id | Commande |
+|----|----------|
+| 0  | PA       |
+| 1  | PB       |
+| 2  | RRA      |
+| 3  | RRB      |
+| 4  | RRR      |
+| 5  | RA       |
+| 6  | RB       |
+| 7  | RR       |
+| 8  | SA       |
+| 9  | SB       |
+| 10 | SS       |
+
+Creation FINI : :white_check_mark: .
 
 Crée le fichier Instruction/instructions.c pour metre dans un tableau toutes les fonctions
 d'instruction, pour qu'on puisse tout gerer dans un seul endroit.
 
 et fais.
+
+/!\ Ne fait rien signifie quoi, on affiche rien ou le code ne fait rien ?? /!\
+(le sujet en anglais dis la meme chose).
+
+Je pars du postulat que si dans l'enoncer nous dis "Ne fait rien".
+
+Pourquoi preciser certain et pas toutes les instructions. Donc je supose que "Ne fait rien" = N'affiche rien si
+l'action n'est pas possible.
+
+Et je n'apliquerais cette regle que a ce qui son concerne :
+
+- sa.
+- sb.
+- pa.
+- pb.
+
+Le reste meme si laction n'est pas possible j'affiche le message.
+
+Verifier que les fonction marche sans leak et sans problème.
+Verification des fonctions : :white_check_mark: .
 
 ## Le trie
 

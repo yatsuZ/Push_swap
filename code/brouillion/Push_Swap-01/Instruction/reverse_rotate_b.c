@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:23:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 16:54:28 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:23:45 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 	@param pils pointeur de la structure piles contenan tout.
 	@return rien.
 */
-void	rrb(t_pile *pils)
+void	rrb(t_pile *pils, int affichage)
 {
 	t_mayon	*last;
 
+	if (affichage)
+		ft_printf("rrb\n");
 	if (!pils || pils->b == 0 || pils->len_b <= 1)
 		return ;
 	last = get_last_mayon(pils->b);
@@ -34,10 +36,4 @@ void	rrb(t_pile *pils)
 	if (last->next)
 		last->next->previous = last;
 	pils->b = last;
-}
-
-void	trrb(t_pile *pils)
-{
-	ft_printf("\nTEST Reverse rotate B :\n");
-	use_instruction(3, pils);
 }

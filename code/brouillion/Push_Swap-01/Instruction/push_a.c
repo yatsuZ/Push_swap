@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:01:40 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/22 15:50:35 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/26 03:47:44 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ void	adjusted_position(int decalage, t_mayon *pil)
 	@brief Prend le premier élément au sommet de b et le met sur a.
 	Ne fait rien si b est vide.
 */
-void	pa(t_pile *pils)
+void	pa(t_pile *pils, int affichage)
 {
 	t_mayon	*element;
 
 	if (!pils || pils->b == 0)
 		return ;
+	if (affichage)
+		ft_printf("pa\n");
 	element = pils->b;
 	pils->b = element->next;
 	if (pils->b)
@@ -55,10 +57,4 @@ void	pa(t_pile *pils)
 	pils->a = element;
 	pils->len_a = pils->len_a + 1;
 	pils->len_b = pils->len_b - 1;
-}
-
-void	tpa(t_pile *pils)
-{
-	ft_printf("\nTEST Push A :\n");
-	use_instruction(0, pils);
 }
