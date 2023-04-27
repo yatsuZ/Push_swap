@@ -1,8 +1,0 @@
-/////////
-
-	// ft_printf("\nLe mayon le plus petit : \n");
-	// affichage_mayon(find_index(pils, 0));
-	// ft_printf("\nLe mayon Median : \n");
-	// affichage_mayon(find_index(pils, 1));
-	// ft_printf("\nLe mayon Le plus grand : \n");
-	// affichage_mayon(find_index(pils, 2));

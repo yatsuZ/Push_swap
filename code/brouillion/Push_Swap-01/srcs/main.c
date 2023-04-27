@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 17:32:55 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/27 14:52:42 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,13 @@
 	que le plus petit est deja range. On le mets en param pour economiser
 	des lignes.
 */
-int	validation_de_trie(t_pile *pils, int position_min)
+int	validation_de_trie_PA(t_pile *pils, int position_min)
 {
 	int		i;
 	t_mayon	*current;
 
 	if (!pils || pils->a == NULL)
 		return (0);
-	if (pils->len_a != pils->len_total)
-		return (-1);
 	i = pils->a->index;
 	current = pils->a;
 	while (current)
@@ -68,7 +66,6 @@ TO DO :
 	Recuper le plus grand petit dindex et median.				  | V 23/04/23
 	6.5 Faire que je peux metre une liste dinstruction + affichage| V 26/04/23
 	7. Algo pour 3 element										  | V 26/04/23
-	7.5 Corriger le fait quon peut metre des arguments+visualiseur| X
 	8. Algo pour 5 element										  | X
 	9. Algo pour plus de 10 elements							  | X
 	10. Verifier la norme, testeur,
@@ -88,11 +85,11 @@ int	main(int argc, char **argv)
 	pils = creat_struct(a);
 	if (error(0, pils, TRUE))
 		return (1);
-	p_min = validation_de_trie(pils, 0);
+	p_min = validation_de_trie_PA(pils, 0);
 	if (p_min > 0 || pils->len_total <= 3)
 		p2_trie_p3(pils, p_min);
 	else if (p_min)
-		trie_generale(pils, p_min);
+		trie_generale(pils);
 	free_struct(&pils);
 	a = NULL;
 	return (0);

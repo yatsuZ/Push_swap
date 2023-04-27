@@ -309,7 +309,6 @@ Verification des fonctions : :white_check_mark: .
 
 ## Le trie
 
-
 Concernant monde code j'ai crée des régles et des fonction specifique.
 
 Les paramétre importante a prendre son :
@@ -335,6 +334,20 @@ Puis si c'est aucun des 2 cas nous devons addopter des strategie différente pou
 
 Je developpe la resolution des problème dans ce doccument :
 [Explication des algos](Algo.md).
+
+## Teste
+
+Pour tester avec des cheker comme :
+
+```bash
+$>ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
+6
+$>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+OK
+$>
+```
+
+Il faudra le faire sous bash
 
 ----------------------------------------
 

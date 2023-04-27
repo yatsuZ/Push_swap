@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convertisseur.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 19:20:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 17:28:22 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/27 13:25:27 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	ft_atoi_verif(char *nptr)
 	int		signe;
 	size_t	i;
 
-	ft_printf("Str = %s\n", nptr);
 	i = 0;
 	nbr = 0;
 	signe = 1;

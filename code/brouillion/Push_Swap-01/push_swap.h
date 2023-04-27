@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 16:25:32 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/27 17:10:08 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-// Constate 
+// Constate
 # define TRUE 1
 # define FALSE 0
 # define PILE_A 1
@@ -65,9 +65,10 @@ typedef struct s_pile
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction de Trie
 
-int			validation_de_trie(t_pile *pils, int decallage);
-void		p2_trie_p3(t_pile *pil, int res_trie);
-void		trie_generale(t_pile *pil, int res_trie);
+int			validation_de_trie_PA(t_pile *pils, int position_min);
+void		p2_trie_p3(t_pile *pil, int p_min);
+void		trie_generale(t_pile *pil);
+int			cout_placement(int position, int len);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
 
@@ -95,7 +96,7 @@ int nbr_instruction, ...);
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Affichage
 
 void		affichage_argc_argv(int z, int argc, char **argv);
-void		affichage_mayon(t_mayon *m);
+void		affichage_mayon(t_mayon *m, int r);
 void		affichage_pile(t_mayon *p);
 void		affichage_struct_all(t_pile *s);
 
@@ -119,7 +120,7 @@ void		*free_pile(t_mayon **s);
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction pour Struct
 
 t_mayon		*creat_mayon(int value, int position, t_mayon *previous);
-void		ft_mayon_iter(t_mayon *mayon, void (*f)(t_mayon *));
+void		ft_mayon_iter(t_mayon *mayon, int i, void (*f)(t_mayon *, int));
 t_pile		*creat_struct(t_mayon *pile_a);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Parsing

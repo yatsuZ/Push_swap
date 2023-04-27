@@ -49,32 +49,39 @@ Nous transvaseront tout les mayon de la pile A dans B.
 
 Sauf le plus petit, la median et le plus grand ou (Tant que la pile A n'est pas trier).
 
-Crée un fonction qui fais cette etape : :x: .
+Crée un fonction qui fais cette etape : :v: .
 
 Ensuite nous aurons plus qu'a faire pour chaque somet de la pile b bien placer les elements pour qu'il soit range
 Exemple :
 
 PA = 0, 5, 10
+
 PB = 7, 3
 
 Le 7 se place entre le 5 et 10, donc on decale la PA puis faire un Push A.
 Puis en place la PB et on place le 3.
 
-Pour optimiser les coupjai une formule :
+Pour optimiser les coup jai une formule :
 
-Trie un mayon = Coup pour le placer un somet de la pile B + Coup pour ranger dans la pile A + Est il le mieux range
+***Trie un mayon = Coup pour le placer un somet de la pile B + Coup pour ranger dans la pile A + Est il le mieux range.***
 
 et on executera laction le plus petit coup de trie.
 
-T = CP + CR + R.
+***T = CP + CR + R.***
 
 CP = coup placement on va juste voir dans la PB quelle est le mieux entre rotate
 B ou reverse rotate B pour chaque mayon de la pile B.
 
+Fonction fais : :v:.
+Fonction implementer: :v:.
+
 CR = Coup de rangement Pour chaque mayon nous alons voir combien de fois faudra til faire Rotate A ou Reverse Rotate A.
 Pour que la valeur du mayon soit bien placer apres un PUSH A.
 
-R = rangement on regarde si la valeur suit directement u  mayon suivant ou precendent.
+Fonction fais : :v:.
+Fonction implementer: :x:.
+
+R = rangement on regarde si la valeur suit directement u mayon suivant ou precendent.
 
 On regarde pour chaque mayon le coup le plus faible pour chaque iteration on est sensée avoir un rangement de pile.
 Optimise.

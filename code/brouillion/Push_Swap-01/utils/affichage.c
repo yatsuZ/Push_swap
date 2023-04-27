@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   affichage.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 04:20:28 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/27 17:34:25 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,23 @@ void	affichage_argc_argv(int z, int argc, char **argv)
 */
 void	print_tab(int valeur, int option)
 {
-	if (option)
+	if (option == 1)
 	{
 		if (valeur < 10 && valeur > -1)
 			ft_printf(" %d\t\t\t|", valeur);
-		else if (valeur <= 1000 && valeur >= -1000)
+		else if (valeur <= 10000 && valeur >= -1000)
 			ft_printf(" %d\t\t|", valeur);
 		else if (valeur <= -1000000000)
 			ft_printf(" %d", valeur);
 		else if (valeur <= -100000000 || valeur >= 1000000000)
 			ft_printf(" %d|", valeur);
+		else
+			ft_printf(" %d\t|", valeur);
+	}
+	else if (option == 2)
+	{
+		if (valeur < 10 && valeur > -1)
+			ft_printf(" %d\t\t|", valeur);
 		else
 			ft_printf(" %d\t|", valeur);
 	}
@@ -68,15 +75,16 @@ void	print_tab(int valeur, int option)
 // @brief Affiche Tout les attributs d'un mayon.
 // @param m pointeur d'un mayon.
 // @returns m est un pointeur de la structure "t_mayon"
-void	affichage_mayon(t_mayon *m)
+void	affichage_mayon(t_mayon *m, int r)
 {
+	(void) r;
 	if (!m)
 		return ;
 	ft_printf("\t|");
 	print_tab(m->position, 1);
 	ft_printf(" %p\t\t\t|", m);
 	print_tab(m->val, 1);
-	print_tab(m->index, 0);
+	print_tab(m->index, 2);
 	if (m->previous)
 		ft_printf(" %p\t\t\t|", m->previous);
 	else
@@ -100,7 +108,7 @@ void	affichage_pile(t_mayon *p)
 	ft_printf("\t| position\t| pointeur\t\t\t| valeur\t| index\t| previous\t\t\t| next\n");
 	ft_printf("\t| ----------|-------------------|-----------\
 |-------|-------------------|------------\n");
-	ft_mayon_iter(p, affichage_mayon);
+	ft_mayon_iter(p, 0, affichage_mayon);
 }
 
 /*

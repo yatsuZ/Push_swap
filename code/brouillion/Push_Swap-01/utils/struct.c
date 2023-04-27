@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:01:19 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 16:30:18 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/04/27 17:05:13 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@
 	parametre pointeur de "t_mayon".
 	@returns Rien
 */
-void	ft_mayon_iter(t_mayon *mayon, void (*f)(t_mayon *))
+void	ft_mayon_iter(t_mayon *mayon, int i, void (*f)(t_mayon *, int))
 {
 	if (!mayon || !f)
 		return ;
-	f(mayon);
+	f(mayon, i);
 	if (!mayon->next)
 		return ;
-	ft_mayon_iter(mayon->next, f);
+	ft_mayon_iter(mayon->next, i, f);
 }
 
 /*
