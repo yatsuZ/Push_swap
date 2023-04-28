@@ -3,14 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   trie_general.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:55:40 by yatsu             #+#    #+#             */
-/*   Updated: 2023/04/27 17:40:27 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/28 23:55:33 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	print_coup(t_mayon *p)
+{
+	if (p==NULL)
+		return ;
+	ft_printf("valeur = %d  \t| CP = %d  \t| CR = %d  \t| Rangement = %d  \t| Trie = %d\n", \
+p->val, p->cplacement, p->crangement, p->rangement, p->trie);
+	print_coup(p->next);
+}
+/*
+	@brief verifie si la liste de mayon et trier par ordre croissant,
+	sans prendre en compte le point de depart.
+	@param tete mayon tete
+	@return True si trier, False si non. (True = 0).
+*/
+int	p_trier(t_mayon *tete)
+{
+	int		i;
+	t_mayon	*current;
+	
+	i = -1;
+	current = tete;
+	while (current)
+	{
+		if (i > current->index)
+		{
+			if (current->index == 0)
+				i = 0;
+			else
+				return (FALSE);
+		}
+		else
+			i = current->index;
+		if (tete->index && current->next == NULL)
+			return (current->index < tete->index);
+		current = current->next;
+	}
+	return (TRUE);
+}
 
 /*
 	@brief Mets tout les mayons de A dans B s'arrete soit quand ce qu'il reste
@@ -19,7 +58,7 @@
 void	transvase(t_pile *p)
 {
 
-	while (p->len_a > 3 && validation_de_trie_PA(p, 0) < 0)
+	while (p->len_a > 3 && !p_trier(p->a))
 	{
 		if (p->a->index == 0 || p->a->index == p->len_total - 1 || \
 		p->a->index == (p->len_total - 1) / 2)
@@ -29,17 +68,34 @@ void	transvase(t_pile *p)
 	}
 }
 
-void	coup_placement_b(t_mayon *pb, int len)
+/*
+	@brief implemente pour chaque mayon de la pile B.
+	leur coup placement, coup rangement, rangement et trie.
+*/
+void	coup_trie(t_pile *p, t_mayon *mb)
 {
-	pb->cplacement = cout_placement(pb->position, len);
+	mb->cplacement = cout_placement(mb->position, p->len_b);
+	mb->crangement = coup_rangement(p, mb);
+	if (mb->cplacement < 0)
+		mb->trie = mb->cplacement * -1;
+	else
+		mb->trie = mb->cplacement;
+	if (mb->crangement < 0)
+		mb->trie = mb->trie + mb->crangement * -1;
+	else
+		mb->trie = mb->trie + mb->crangement;
+	mb->trie = mb->trie + mb->rangement;
 }
 
-void	print_coup(t_mayon *p)
+
+void	ft_iter_mb(t_pile *p, t_mayon *mayon, void (*f)(t_pile *p, t_mayon *mayon))
 {
-	if (p==NULL)
+	if (!p || !mayon || !f)
 		return ;
-	ft_printf("valeur = %d  \t| CP = %d\n", p->val, p->cplacement);
-	print_coup(p->next);
+	f(p, mayon);
+	if (!mayon->next)
+		return ;
+	ft_iter_mb(p, mayon->next, f);
 }
 
 /*
@@ -48,11 +104,19 @@ void	print_coup(t_mayon *p)
 */
 void	trie_generale(t_pile *p)
 {
+	int	patrier;
+
 	ft_printf("Trie generale :\n");
 	if (!p)
 		return ;
 	transvase(p);
-	ft_mayon_iter(p->b, p->len_b, coup_placement_b);
+
+	patrier = p_trier(p->a);
+	if (!patrier)
+		p2_trie_p3(p, (find_index(p, 0)->index * -1) -1);
+	
+
+	ft_iter_mb(p, p->b, coup_trie);
 	affichage_struct_all(p);
 	print_coup(p->b);
 }

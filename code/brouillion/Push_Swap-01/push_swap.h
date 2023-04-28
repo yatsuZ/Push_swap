@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/27 17:10:08 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/28 19:51:27 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,11 @@ typedef struct s_pile
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction de Trie
 
-int			validation_de_trie_PA(t_pile *pils, int position_min);
+int			validation_parfaitement_trier_PA(t_pile *pils, int position_min);
 void		p2_trie_p3(t_pile *pil, int p_min);
 void		trie_generale(t_pile *pil);
 int			cout_placement(int position, int len);
+int			coup_rangement(t_pile *p, t_mayon *m);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
 

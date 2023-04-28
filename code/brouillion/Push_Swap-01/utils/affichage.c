@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   affichage.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/27 17:34:25 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/28 14:00:24 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ void	affichage_mayon(t_mayon *m, int r)
 		return ;
 	ft_printf("\t|");
 	print_tab(m->position, 1);
-	ft_printf(" %p\t\t\t|", m);
+	ft_printf(" %p\t|", m);
 	print_tab(m->val, 1);
 	print_tab(m->index, 2);
 	if (m->previous)
-		ft_printf(" %p\t\t\t|", m->previous);
+		ft_printf(" %p\t|", m->previous);
 	else
 		ft_printf(" %p\t\t\t\t|", m->previous);
 	ft_printf(" %p\n", m->next);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   trie_de_3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:43:28 by yatsu             #+#    #+#             */
-/*   Updated: 2023/04/27 15:05:21 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/28 19:09:44 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,12 @@ void	p2_trie_p3(t_pile *pil, int p_min)
 {
 	if (!pil || !p_min)
 		return ;
-	if (pil->len_total == 2 || (pil->len_total == 3 && p_min == -2))
+	if (pil->len_total == 2 || (pil->len_a == 3 && p_min == -2))
 		return (use_instruction(TRUE, pil, 1, SA));
+	else if (pil->len_a == 3 && p_min == -3)
+		return (use_instruction(TRUE, pil, 2, RA, SA));
+	else if (pil->len_a == 3 && p_min == -1)
+		return (use_instruction(TRUE, pil, 2, RRA, SA));
 	else if (p_min > 0)
 		return (faire_r_ou_rr(pil, p_min, PILE_A));
-	else if (pil->len_total == 3 && p_min == -3)
-		return (use_instruction(TRUE, pil, 2, RA, SA));
-	else if (pil->len_total == 3 && p_min == -1)
-		return (use_instruction(TRUE, pil, 2, RRA, SA));
 }

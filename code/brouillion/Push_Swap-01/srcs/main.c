@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/27 14:52:42 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/04/28 19:51:17 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /*
 	@brief Fonction qui return 0 si la Pile A est totallement trier +
-	Bien ranger.
+	Bien ranger, c'est à dire qu'il ya q'une différence de 1.
 	Si la pile est trier mais pas ranger. La position du plus petit noeud
 	Sinon elle n'est pas trier. Parei que le precedent mais en Negatif - 1.
 	@return en negatif la position du plus petit noeud - 1 si non trier.
@@ -27,7 +27,7 @@
 	que le plus petit est deja range. On le mets en param pour economiser
 	des lignes.
 */
-int	validation_de_trie_PA(t_pile *pils, int position_min)
+int	validation_parfaitement_trier_PA(t_pile *pils, int position_min)
 {
 	int		i;
 	t_mayon	*current;
@@ -85,7 +85,7 @@ int	main(int argc, char **argv)
 	pils = creat_struct(a);
 	if (error(0, pils, TRUE))
 		return (1);
-	p_min = validation_de_trie_PA(pils, 0);
+	p_min = validation_parfaitement_trier_PA(pils, 0);
 	if (p_min > 0 || pils->len_total <= 3)
 		p2_trie_p3(pils, p_min);
 	else if (p_min)
