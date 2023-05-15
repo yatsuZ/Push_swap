@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "push_swap.h": "c",
+        "stdlib.h": "c",
+        "libft.h": "c",
+        "instruction.h": "c",
+        "*.tcc": "c"
+    },
+    "C_Cpp.loggingLevel": "Debug",
+    "C_Cpp.errorSquiggles": "disabled"
+}
