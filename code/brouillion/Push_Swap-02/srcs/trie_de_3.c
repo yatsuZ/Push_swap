@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   trie_de_3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:43:28 by yatsu             #+#    #+#             */
-/*   Updated: 2023/04/28 19:09:44 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/16 15:32:16 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	faire_r_ou_rr(t_pile *p, int position, int ab)
 	@param pil Structure pile, qui contient mes données et ma struct
 	@param p_min Int qui me dis si c'est trie et ou est le mayon le plus petit
 	ou non.
-	Si negatife ce n'est pas trier.
+	Si negatife ce n'est pas trier. alors le metre en positive et faire - 1
 	Sinon dis la position du plus petit mayon.
 	@return Rien.
 */

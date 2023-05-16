@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   affichage.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/28 14:00:24 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/16 16:05:54 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ void	affichage_mayon(t_mayon *m, int r)
 	if (m->previous)
 		ft_printf(" %p\t|", m->previous);
 	else
-		ft_printf(" %p\t\t\t\t|", m->previous);
+		ft_printf(" %p\t\t|", m->previous);
 	ft_printf(" %p\n", m->next);
 	if (!(m->next))
-		ft_printf("\t| -\t\t\t| -\t\t\t\t\t| -\t\t\t| -\t\t| -\t\t\t\t\t| -\n\n");
+		ft_printf("\t| -\t\t\t| -\t\t\t| -\t\t\t| -\t\t| -\t\t\t| -\n\n");
 }
 
 /*
@@ -105,9 +105,9 @@ void	affichage_pile(t_mayon *p)
 	ft_printf("Affichage de la pile :\n");
 	if (!(p))
 		return ((void) ft_printf("\t------- NULL ---------\n\n"));
-	ft_printf("\t| position\t| pointeur\t\t\t| valeur\t| index\t| previous\t\t\t| next\n");
-	ft_printf("\t| ----------|-------------------|-----------\
-|-------|-------------------|------------\n");
+	ft_printf("\t| position\t| pointeur\t| valeur\t| index\t| previous\t| next\n");
+	ft_printf("\t| ----------|-----------|-----------\
+|-------|-----------|------------\n");
 	ft_mayon_iter(p, 0, affichage_mayon);
 }
 

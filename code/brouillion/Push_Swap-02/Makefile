@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+         #
+#    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/05/15 21:55:46 by yatsu            ###   ########.fr        #
+#    Updated: 2023/05/16 16:14:18 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ re : fclean all
 ################# Commande perso
 
 # Verifie la norminette
-norme :
+norme:
 	@ clear
 	@ if ! norminette | grep "Error"; then echo "\033[32mOK!\033[0m"; fi
 

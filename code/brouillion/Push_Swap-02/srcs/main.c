@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/15 21:57:26 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/16 16:31:47 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,14 @@
 // fichier principal qui execute le code
 
 /*
-	@brief Fonction qui return 0 si la Pile A est totallement trier +
-	Bien ranger, c'est à dire qu'il ya q'une différence de 1.
-	Si la pile est trier mais pas ranger. La position du plus petit noeud
-	Sinon elle n'est pas trier. Parei que le precedent mais en Negatif - 1.
-	@return en negatif la position du plus petit noeud - 1 si non trier.
-	0 si trier et sans position_min ou pointeur NULL.
-	Position du plus petit Noeud si trier mais decalage.
+	@brief Permet de savoir si la pile a est trier.
+	@return Fonction qui return la position du plus petit element si trier.
+	Sinon si elle n'est pas trier, la position du plus petit element en negatif - 1
 	@param pils la structure pile.
-	@param position_min int metre position_min a 0 on pars du postulat
-	que le plus petit est deja range. On le mets en param pour economiser
+	@param position_min int init a 0 mis en param pour economiser
 	des lignes.
 */
-int	validation_parfaitement_trier_pa(t_pile *pils, int position_min)
+int	pa_est_il_trier(t_pile *pils, int position_min)
 {
 	int		i;
 	t_mayon	*current;
@@ -75,24 +70,22 @@ int	main(int argc, char **argv)
 {
 	t_pile	*pils;
 	t_mayon	*a;
-	int		p_min;
+	int		trie_res;
 
-	if (argc == 1)
-		return (0);
 	a = parsing(0, argc, argv, NULL);
 	if (a == NULL)
 		return (1);
 	pils = creat_struct(a);
 	if (pils == NULL)
 		return (1);
-	p_min = validation_parfaitement_trier_pa(pils, 0);
-	if (p_min > 0 || pils->len_total <= 3)
-		p2_trie_p3(pils, p_min);
-	else if (p_min && pils->len_total <= 5)
+	trie_res = pa_est_il_trier(pils, 0);
+	if (trie_res > 0 || pils->len_total <= 3)
+		p2_trie_p3(pils, trie_res);
+	else if (trie_res && pils->len_total <= 5)
 		trie_5_ou_moin(pils);
-	else if (p_min)
+	else if (trie_res)
 		trie_generale(pils);
-	if (validation_parfaitement_trier_pa(pils, 0) != 0)
+	if (pa_est_il_trier(pils, 0) != 0)
 		ft_printf("\n\nERORRE PAS FINI\n\n\n");
 	free_struct(&pils);
 	a = NULL;
