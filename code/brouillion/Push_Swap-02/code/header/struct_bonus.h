@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate_reverse_rotate.c                    :+:      :+:    :+:   */
+/*   struct_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 18:25:17 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/27 16:32:17 by yzaoui           ###   ########.fr       */
+/*   Created: 2023/05/27 17:00:57 by yzaoui            #+#    #+#             */
+/*   Updated: 2023/05/27 17:56:44 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+#ifndef STRUCT_BONUS_H
+# define STRUCT_BONUS_H
 
-/*
-	@brief fais rra et rrb en meme temp.
-	Décale d’une position vers le bas tous les élements de
-	la pile a et b.
-	Le dernier élément devient le premier.
-	@param pils conetnant tout le element important.
-*/
-void	rrr(t_pile *pils, int affichage)
+typedef struct s_node_instruction
 {
-	if (affichage)
-		ft_printf("rrr\n");
-	rra(pils, 0);
-	rrb(pils, 0);
-}
+	char						*param;
+	int							instruction;
+	struct s_node_instruction	*next;
+}	t_node_instruction;
+
+typedef struct s_list_instruction
+{
+	struct s_node_instruction	*all_instruction;
+	int							nbr_instruction ;
+}	t_list_instruction;
+
+#endif

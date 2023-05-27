@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   swap_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:03:15 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 03:27:04 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/27 16:32:36 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../header/push_swap.h"
 
 /*
 	@param pils conetnant tout le element important.

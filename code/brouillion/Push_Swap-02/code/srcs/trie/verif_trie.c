@@ -6,12 +6,12 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:39 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/25 15:35:31 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 16:31:34 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
-#include "../../checker.h"
+#include "../../header/push_swap.h"
+#include "../../header/checker.h"
 
 /*
 	@brief Permet de savoir si la pile a est trier.

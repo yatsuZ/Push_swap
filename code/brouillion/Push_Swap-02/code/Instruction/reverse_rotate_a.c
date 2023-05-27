@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:22:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 03:23:54 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/27 16:32:12 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../header/push_swap.h"
 
 /*
 	@brief Permet de recuperer le dernier mayons d'un pile

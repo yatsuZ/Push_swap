@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:43:28 by yatsu             #+#    #+#             */
-/*   Updated: 2023/05/25 14:00:35 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 16:31:09 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../header/push_swap.h"
 
 // @param position -> int de la position du mayon
 // @param len -> la longuer de la pile

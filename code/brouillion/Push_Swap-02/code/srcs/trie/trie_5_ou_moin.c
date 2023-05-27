@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:21:25 by yatsu             #+#    #+#             */
-/*   Updated: 2023/05/25 14:00:33 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 16:31:03 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../header/push_swap.h"
 
 void	trie_5_ou_moin(t_pile *p)
 {

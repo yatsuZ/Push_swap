@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:55:40 by yatsu             #+#    #+#             */
-/*   Updated: 2023/05/25 14:00:38 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 16:31:14 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../header/push_swap.h"
 
 /*
 	@brief verifie si la liste de mayon et trier par ordre croissant,

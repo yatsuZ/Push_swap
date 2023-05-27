@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:38:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/16 16:05:54 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 16:30:13 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../header/push_swap.h"
 
 // Toutes les fonctions qui permetrons d'afficher en utilisant soit
 // ft_printf() et write(). c'est plus un fichier d'outils pour debeuguer et

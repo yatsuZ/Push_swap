@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   struct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:01:19 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/15 20:52:39 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/27 16:39:33 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../header/push_swap.h"
+#include "../header/checker.h"
 
 // creation de structure ou foncion utilise pour la mipulation de strucutre
 

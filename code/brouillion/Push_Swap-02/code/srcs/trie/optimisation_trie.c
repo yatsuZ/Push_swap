@@ -6,11 +6,11 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:17:48 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/25 14:00:27 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 16:30:59 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../../header/push_swap.h"
 
 /*
 	@brief un mayon de pile b cherche le mayon qui lui suit dans la pile a

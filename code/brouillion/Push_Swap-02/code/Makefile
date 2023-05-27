@@ -6,13 +6,14 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/05/25 15:39:07 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/05/27 18:49:00 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+SRC_MAIN = ./srcs/main.c
+
 DIR_SRC =		./srcs/
-SRC_FILES =		main.c				\
-				parsing.c
+SRC_FILES =		parsing.c
 
 DIR_TRIE =		./srcs/trie/
 TRIE_FILES =	optimisation_trie.c	\
@@ -41,19 +42,21 @@ INSTRUCTION_FILES = instructions.c					\
 					swap_b.c						\
 					swap_swap.c
 
+SRC_WITHOUT_MAIN =	${addprefix ${DIR_SRC}, ${SRC_FILES}}		\
+					${addprefix ${DIR_UTILS}, ${UTILS_FILES}}	\
+					${addprefix ${DIR_TRIE}, ${TRIE_FILES}}		\
+					${addprefix ${DIR_INSTRUCTION}, ${INSTRUCTION_FILES}}
 
-SRC =	${addprefix ${DIR_SRC}, ${SRC_FILES}}		\
-		${addprefix ${DIR_UTILS}, ${UTILS_FILES}}	\
-		${addprefix ${DIR_TRIE}, ${TRIE_FILES}}		\
-		${addprefix ${DIR_INSTRUCTION}, ${INSTRUCTION_FILES}}	\
-
+SRC =	${SRC_MAIN} \
+		${SRC_WITHOUT_MAIN}
 
 DIR_BONUS =		./bonus/
 BONUS_FILES =	main.c								\
-				parsing_param.c
+				parsing_param.c						\
+				struct_bonus.c
 
 SRC_BONUS =	${addprefix ${DIR_BONUS}, ${BONUS_FILES}}	\
-			SRC
+			${SRC_WITHOUT_MAIN}
 
 OBJ = ${SRC:.c=.o}
 OBJ_BONUS = ${SRC_BONUS:.c=.o}
@@ -82,10 +85,12 @@ bonus: ${OBJ_BONUS}
 clean :
 	${MAKE_LIBFT} fclean
 	${RM} ${OBJ}
+	${RM} ${OBJ_BONUS}
 
 fclean : clean
 	${MAKE_LIBFT} fclean
 	${RM} ${NAME}
+	${RM} ${NAME_BONUS}
 
 re : fclean all
 

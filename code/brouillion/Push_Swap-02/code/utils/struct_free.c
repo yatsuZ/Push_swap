@@ -6,12 +6,12 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:33:05 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/27 17:00:08 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 16:39:27 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
+#include "../header/push_swap.h"
+#include "../header/checker.h"
 // Gestion de free de structure
 
 // free une lise de mayon,

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:02:59 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 04:04:13 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/27 16:32:10 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../header/push_swap.h"
 
 /*
 	@param pils pointeur de la structure "t_pile" cette structure contiens

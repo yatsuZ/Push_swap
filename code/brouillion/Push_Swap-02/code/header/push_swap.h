@@ -6,62 +6,18 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/25 15:36:02 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/27 19:27:03 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "libft/libft.h"
+# include "./constante.h"
+# include "./struct.h"
+# include "../libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-
-// Constate
-# define TRUE 1
-# define FALSE 0
-# define PILE_A 1
-# define PILE_B 0
-# define PA 0
-# define PB 1
-# define RRA 2
-# define RRB 3
-# define RRR 4
-# define RA 5
-# define RB 6
-# define RR 7
-# define SA 8
-# define SB 9
-# define SS 10
-
-/*
-	@brief Cree la structur d'un mayon.
-	@details Un mayon est un élément de la liste qui contient une
-	valeur entière,
-	un index, une position et des pointeurs vers le maillon suivant
-	et précédent de la liste.
-*/
-typedef struct s_mayon
-{
-	int				val;
-	int				index;
-	int				position;
-	int				cplacement;
-	int				crangement;
-	int				rangement;
-	int				trie;
-	struct s_mayon	*next;
-	struct s_mayon	*previous;
-}	t_mayon;
-
-typedef struct s_pile
-{
-	struct s_mayon	*a;
-	struct s_mayon	*b;
-	int				len_a;
-	int				len_b;
-	int				len_total;
-}	t_pile;
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction de Trie
 

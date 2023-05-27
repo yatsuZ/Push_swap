@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate_reverse_rotate.c                    :+:      :+:    :+:   */
+/*   constante.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 18:25:17 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/27 16:32:17 by yzaoui           ###   ########.fr       */
+/*   Created: 2023/05/27 16:24:57 by yzaoui            #+#    #+#             */
+/*   Updated: 2023/05/27 20:29:35 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+#ifndef CONSTANTE_H
+# define CONSTANTE_H
 
-/*
-	@brief fais rra et rrb en meme temp.
-	Décale d’une position vers le bas tous les élements de
-	la pile a et b.
-	Le dernier élément devient le premier.
-	@param pils conetnant tout le element important.
-*/
-void	rrr(t_pile *pils, int affichage)
-{
-	if (affichage)
-		ft_printf("rrr\n");
-	rra(pils, 0);
-	rrb(pils, 0);
-}
+// Constate
+# define TRUE 1
+# define FALSE 0
+# define PILE_A 1
+# define PILE_B 0
+# define PA 0
+# define PB 1
+# define RRA 2
+# define RRB 3
+# define RRR 4
+# define RA 5
+# define RB 6
+# define RR 7
+# define SA 8
+# define SB 9
+# define SS 10
+
+#endif

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   convertisseur.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 19:20:52 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/15 20:59:32 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/27 16:30:09 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../header/push_swap.h"
 
 // Tout ce qui me permet de verifier la validiter de convertir un str en int.
 

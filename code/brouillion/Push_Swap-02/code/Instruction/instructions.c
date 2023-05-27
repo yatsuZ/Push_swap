@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:26:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/04/26 05:11:32 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/05/27 21:12:05 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../header/push_swap.h"
+#include "../header/checker.h"
 
 // Centraliser tout les actione plus afficher leur actions ilsseront tous
 // dans un tableau.
