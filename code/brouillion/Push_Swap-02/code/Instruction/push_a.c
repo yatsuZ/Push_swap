@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:01:40 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/29 21:17:39 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 22:15:26 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,17 @@ void	pa(t_pile *pils, int affichage)
 		return ;
 	if (affichage)
 		ft_printf("pa\n");
-
 	element = pils->b;
 	pils->b = element->next;
 	if (pils->b)
 		pils->b->previous = 0;
 	element->position = 0;
 	element->next = 0;
-
 	adjusted_position(-1, pils->b);
 	adjusted_position(1, pils->a);
-
 	element->next = pils->a;
-
 	if (element->next)
 		element->next->previous = element;
-
 	pils->a = element;
 	pils->len_a = pils->len_a + 1;
 	pils->len_b = pils->len_b - 1;

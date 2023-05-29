@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:39 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/29 19:26:50 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 22:31:48 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	pa_est_il_trier(t_pile *pils, int position_min)
 	{
 		if (i != current->index)
 		{
-			if (current->index == 0)
+			if (current->index == find_min(pils->a)->index)
 			{
 				position_min = current->position;
 				i = 0;

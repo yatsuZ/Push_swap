@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/29 21:55:13 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 22:31:48 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ int	main(int argc, char **argv)
 	else if (trie_res)
 		trie_generale(pils);
 	if (pa_est_il_trier(pils, 0) != 0)
+	{
 		ft_printf("\n\nERORRE PAS FINI\n\n\n");
+	}
 	free_struct(&pils);
 	a = NULL;
 	return (0);
