@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:21:25 by yatsu             #+#    #+#             */
-/*   Updated: 2023/05/29 20:51:55 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 21:57:37 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ void	trie_5_ou_moin(t_pile *p)
 	while (p->len_a > 3)
 		use_instruction(1, p, 1, PB);
 	p2_trie_p3(p, pa_est_il_trier(p, 0));
+	// add_into_pa(p, p->b);
+	// add_into_pa(p, p->b);
 	// while (p->b)
 	// 	add_into_pa(p, p->b);
-	add_into_pa(p, p->b);
-	affichage_struct_all(p);
+	// faire_r_ou_rr(p, find_min(p->a)->position, PILE_A);
 	return ;
 }
 
@@ -42,11 +43,6 @@ void	add_into_pa(t_pile *p, t_mayon *mayon_b)
 	t_mayon	*suivant;
 
 	suivant = find_most_close(p->a, mayon_b);
-	ft_printf("Le mayon que l'on shouaite place il est dans la pile b :\n");
-	affichage_mayon(mayon_b, 0);
-	ft_printf("Le mayon le plus proche dans pile a :\n");
-	affichage_mayon(suivant, 0);
-	ft_printf("Le mayon de la pile b sera place a la tete de :\n");
 	if (suivant->index < mayon_b->index)
 	{
 		if (suivant->next == NULL)
@@ -54,5 +50,6 @@ void	add_into_pa(t_pile *p, t_mayon *mayon_b)
 		else
 			suivant = suivant->next;
 	}
-	affichage_mayon(suivant, 0);
+	faire_r_ou_rr(p, suivant->position, PILE_A);
+	use_instruction(TRUE, p, 1, PA);
 }

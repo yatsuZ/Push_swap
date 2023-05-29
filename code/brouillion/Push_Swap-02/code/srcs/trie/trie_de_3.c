@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 01:43:28 by yatsu             #+#    #+#             */
-/*   Updated: 2023/05/27 16:31:09 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 22:01:54 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ void	faire_r_ou_rr(t_pile *p, int position, int ab)
 {
 	int	res;
 
-	res = cout_placement(position, p->len_a);
-	while (res)
+	if (ab)
+		res = cout_placement(position, p->len_a);
+	else
+		res = cout_placement(position, p->len_b);
+	while (res != 0)
 	{
 		if (res < 0)
 		{
@@ -71,7 +74,17 @@ void	p2_trie_p3(t_pile *pil, int p_min)
 	else if (pil->len_a == 3 && p_min == -3)
 		return (use_instruction(TRUE, pil, 2, RA, SA));
 	else if (pil->len_a == 3 && p_min == -1)
-		return (use_instruction(TRUE, pil, 2, RRA, SA));
+	{
+		ft_printf("-----------------\ndebut  : ");
+		affichage_struct_all(pil);
+		ft_printf("-----------------\nRRA  : ");
+		use_instruction(TRUE, pil, 1, RRA);
+		affichage_struct_all(pil);
+		ft_printf("-----------------\nSA  : ");
+		use_instruction(TRUE, pil, 1, SA);
+		affichage_struct_all(pil);
+		return ;
+	}
 	else if (p_min > 0)
 		return (faire_r_ou_rr(pil, p_min, PILE_A));
 }

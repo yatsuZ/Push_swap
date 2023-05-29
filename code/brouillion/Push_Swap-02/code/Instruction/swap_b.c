@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:09:15 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/27 16:32:33 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 22:10:06 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	sb(t_pile *pils, int affichage)
 	first->previous = second;
 	second->previous = 0;
 	first->next = second->next;
+	if (second->next)
+		second->next->previous = first;
 	second->next = first;
 	pils->b = second;
 }

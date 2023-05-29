@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/29 20:40:28 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 21:00:01 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void		trie_generale(t_pile *pil);
 int			cout_placement(int position, int len);
 int			coup_rangement(t_pile *p, t_mayon *m);
 void		add_into_pa(t_pile *p, t_mayon *mayon_b);
+void		faire_r_ou_rr(t_pile *p, int position, int ab);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
 
