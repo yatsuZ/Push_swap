@@ -6,7 +6,7 @@
 #    By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/05/27 18:49:00 by yzaoui           ###   ########.fr        #
+#    Updated: 2023/05/29 19:18:26 by yzaoui           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ DIR_UTILS =		./utils/
 UTILS_FILES =	affichage.c		\
 				convertisseur.c	\
 				struct_free.c	\
-				struct.c
+				struct.c		\
+				utile.c
 
 DIR_INSTRUCTION =	./Instruction/
 INSTRUCTION_FILES = instructions.c					\

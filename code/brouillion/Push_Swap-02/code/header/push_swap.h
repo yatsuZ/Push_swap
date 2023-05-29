@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:48:57 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/27 19:27:03 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 20:40:28 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,15 @@ void		trie_5_ou_moin(t_pile *p);
 void		trie_generale(t_pile *pil);
 int			cout_placement(int position, int len);
 int			coup_rangement(t_pile *p, t_mayon *m);
+void		add_into_pa(t_pile *p, t_mayon *mayon_b);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Fonction struct utile
 
 void		adjusted_position(int decalage, t_mayon *pil);
 t_mayon		*get_last_mayon(t_mayon *pil);
 t_mayon		*find_index(t_pile *pils, int option);
+t_mayon		*find_min(t_mayon *tete);
+t_mayon		*find_most_close(t_mayon *tete_a, t_mayon *mayon_b);
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Instructions
 

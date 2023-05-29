@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:26:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/27 21:12:05 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 19:14:31 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	use_instruction(int affichage, t_pile *pils, int nbr_instruction, ...)
 	Si 0 cherche le plus petit index.
 	Si 1 cherche la medianne.
 	Si 2 cherche le plus grand index.
-	@brief permet de chercher les index import d'une pile.
+	@brief permet de chercher l'index 0, median, le plus grnand dans la pile A.
 	@return Return NULL si la len
 	est inferieurre a 2 ou pointeur NULL.
 */

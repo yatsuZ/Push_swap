@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:39 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/27 16:31:34 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/29 19:26:50 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	pa_est_il_trier(t_pile *pils, int position_min)
 				i = 0;
 			}
 			else
-				return ((-1 * find_index(pils, 0)->position) - 1);
+				return ((-1 * find_min(pils->a)->position) - 1);
 		}
 		i++;
 		current = current->next;
