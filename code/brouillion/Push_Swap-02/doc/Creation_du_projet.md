@@ -1,23 +1,18 @@
 # Création du projet
 
-Note a moi meme me renseignier sur les "enum" pour deffinir SA, SB ... etc.
-
 ## Présentation du projet
 
 Le projet "Push_swap" consiste à trier une pile d'entiers en utilisant un nombre
 limité d'opérations.
 Ce projet est réalisé dans le cadre de l'école 42.
 
-### Regle
+### Convontien que j'utilise dans le code
 
-La variable **z** sont des int, size_t, long etc qui son initialise à 0 pour
+La variable **z** sont des int qui son initialise à 0 pour
 des raison de gain de ligne.
 
 Les variable **i**, **j** sont des variables qui sont utilise comme Index pour
 se deplacer dans les tableaux.
-
-"g_text_error" dans *./utils/affichage.c* est un tableau contenant tout
-mes message de texte.
 
 ## Étape 0 : Organisation du code
 
@@ -36,7 +31,6 @@ push_swap/
 │   └── ...
 ├── utils/
 │   ├── affichage.c
-│   ├── error.c
 │   └── ...
 ├── srcs/
 │   ├── main.c

@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/29 22:31:48 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/30 15:19:20 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ TO DO :
 	Recuper le plus grand petit dindex et median.				  | V 23/04/23
 	6.5 Faire que je peux metre une liste dinstruction + affichage| V 26/04/23
 	7. Algo pour 3 element										  | V 26/04/23
-	8. Algo pour 5 element										  | X
-	9. Algo pour plus de 10 elements							  | X
+	8. Algo pour 5 element										  | V 29/04/23
+	9. Algo pour plus de 5 elements								  | X
 	10. Verifier la norme, testeur,
 	retirer fonction et commentaires inutile					  | X
 */
@@ -50,10 +50,6 @@ int	main(int argc, char **argv)
 		trie_5_ou_moin(pils);
 	else if (trie_res)
 		trie_generale(pils);
-	if (pa_est_il_trier(pils, 0) != 0)
-	{
-		ft_printf("\n\nERORRE PAS FINI\n\n\n");
-	}
 	free_struct(&pils);
 	a = NULL;
 	return (0);

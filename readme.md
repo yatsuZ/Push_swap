@@ -33,7 +33,7 @@ Les actions possibles sont :
 | `sb`  | swap b                              | échanger b                              | Intervertit les 2 premiers éléments au sommet de la pile b. Ne fait rien s’il n’y en a qu’un ou aucun.                   |
 | `ss`  | swap a + swap b                     | échanger a  + échanger b                | sa et sb en même temps.                                                                                                  |
 | `pa`  | push a                              | pousser a                               | Prend le premier élément au sommet de b et le met sur a. Ne fait rien si b est vide.                                     |
-| `pb`  | push b                              | pousser b                               | Prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.                                     |
+| `pb`  | push b                              | pougitsser b                               | Prend le premier élément au sommet de a et le met sur b. Ne fait rien si a est vide.                                     |
 | `rb`  | rotate b                            | rotation b                              | Décale d’une position vers le haut tous les élements de la pile b. Le premier élément devient le dernier.                |
 | `ra`  | rotate a                            | rotation a                              | Décale d’une position vers le haut tous les élements de la pile a. Le premier élément devient le dernier.                |
 | `rr`  | rotate a + rotate b                 | rotation a + rotation b                 | ra et rb en même temps.                                                                                                  |
