@@ -6,7 +6,7 @@
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:21:00 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/31 20:45:39 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/31 20:53:08 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,6 +233,8 @@ void tout_dans_b(t_pile *p)
 	}
 
 }
+
+// encore divise par 2 chaque mayon et faire mon sisteme de optimisation de trie
 
 void	trie_generale(t_pile *p)
 {
