@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/31 20:05:13 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/05/31 23:14:06 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	main(int argc, char **argv)
 		trie_5_ou_moin(pils);
 	else if (trie_res)
 		trie_generale(pils);
+	if (pa_est_il_trier(pils, 0) != 0)
+		ft_printf("CE n'est pas trier \n\n");
 	free_struct(&pils);
 	a = NULL;
 	return (0);

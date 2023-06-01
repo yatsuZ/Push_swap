@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   trie_general.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:21:00 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/05/31 20:53:08 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/06/01 02:32:43 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	trie_median_max(t_pile *p, int median)
 	{
 		if (p->a->index == 0 || p->a->index == p->len_total - 1)
 			use_instruction(TRUE, p, 1, RA);
-		use_instruction(TRUE, p, 1, PB);
+		else
+			use_instruction(TRUE, p, 1, PB);
 		if (p->b->index >= median + (median / 2))
 			use_instruction(TRUE, p, 1, RB);
 	}
@@ -48,7 +49,9 @@ void	trie_quart_min(t_pile *p, int quartille)
 	while (p->b->index >= quartille)
 	{
 		if (p->b->index > quartille + (quartille / 2))
+		{
 			use_instruction(TRUE, p, 1, PA);
+		}
 		else
 			use_instruction(TRUE, p, 1, RB);
 	}
@@ -59,8 +62,29 @@ void	trie_quart_min(t_pile *p, int quartille)
 		else
 			use_instruction(TRUE, p, 1, RB);
 	}
+///// trier 1ier sexieme
+	while (p->a->index <= (quartille / 2))
+	{
+		if (!p->a->index || p->a->index >= (quartille / 4))
+			use_instruction(TRUE, p, 1, RA);
+		else
+			use_instruction(TRUE, p, 1, PB);
+	}
+	while (get_last_mayon(p->a)->index && get_last_mayon(p->a)->index < quartille)
+		use_instruction(TRUE, p, 2, RRA, PB);
+		
+	while (p->b->index <= quartille)
+		use_instruction(TRUE, p, 1, RB);
+///// trier 2 iem sezieme
 	while (p->a->index <= quartille * 2)
-		use_instruction(TRUE, p, 1, PB);
+	{
+		if (p->a->index >= (quartille * 2) - (quartille / 4))
+			use_instruction(TRUE, p, 1, RA);
+		else
+			use_instruction(TRUE, p, 1, PB);
+	}
+	while (get_last_mayon(p->a)->index && get_last_mayon(p->a)->index <= quartille * 2)
+		use_instruction(TRUE, p, 2, RRA, PB);
 }
 
 void	trie_quart_max(t_pile *p, int huitiemme)
@@ -116,43 +140,35 @@ void pretrie_huitieme(t_pile *p, int huitiemme, int unite)
 	}
 
 }
-// void amalgame_dans_b(t_pile *p, int huitiemme)
-// {
-// 	pretrie_huitieme(p, huitiemme, 1);
-// }
 
 void amalgame_dans_b(t_pile *p, int huitiemme)
 {
-	while (p->a->index < huitiemme * 7)
-		use_instruction(TRUE, p, 1, PB);
-	while (p->a->index >= huitiemme * 7 || !p->a->index)
-		use_instruction(TRUE, p, 1, RA);
+	while (p->a->index <= huitiemme * 5)
+	{
+		if (p->a->index >= (huitiemme * 4) + (huitiemme / 2))
+			use_instruction(1, p, 1, RA);
+		else
+			use_instruction(1, p, 1, PB);
+	}
+	while (get_last_mayon(p->a)->index && get_last_mayon(p->a)->index <= huitiemme * 7)
+			use_instruction(1, p, 2, RRA, PB);
+
+	while (get_last_mayon(p->b)->index > huitiemme)
+		use_instruction(1, p, 1, RRB);
+	while (p->a->index != 0 && p->a->index != p->len_total - 1)
+	{
+		if (p->a->index >= p->len_total - (huitiemme / 2))
+			use_instruction(1, p, 1, RA);
+		else
+			use_instruction(1, p, 1, PB);
+	}	
 	while (p->len_a > 2)
 	{
 		if (p->a->index == 0 || p->a->index == p->len_total - 1)
-			use_instruction(TRUE, p, 1, RA);
+			use_instruction(1, p, 1, RA);
 		else
-			use_instruction(TRUE, p, 1, PB);
+			use_instruction(1, p, 1, PB);
 	}
-}
-
-
-void amalgame_dans_a(t_pile *p, int huitiemme)
-{
-	while (p->b->index > huitiemme)
-		use_instruction(TRUE, p, 1, PA);
-	while (p->b->index <= huitiemme)
-		use_instruction(TRUE, p, 1, RB);
-	while (p->b->index < huitiemme * 4)
-		use_instruction(TRUE, p, 1, PA);
-	while (p->b->index > huitiemme * 6 || p->b->index < huitiemme * 5)
-		use_instruction(TRUE, p, 1, RRB);
-	use_instruction(TRUE, p, 1, RB);
-	while (p->b)
-		use_instruction(TRUE, p, 1, PA);
-	while (!p->a->index || p->a->index > huitiemme)
-		use_instruction(TRUE, p, 1, RA);
-	amalgame_dans_b(p, huitiemme);
 }
 
 void add_into_pa_general(t_pile *p)
@@ -180,76 +196,18 @@ void add_into_pa_general(t_pile *p)
 	return (add_into_pa_general(p));
 }
 
-void	go_to_unit(t_pile *p, int min, int max)
-{
-	t_mayon	*first_unite;
-
-	first_unite = p->b;
-	while (!(first_unite->index >= min && first_unite->index <= max) \
-	|| !(!first_unite->previous || (first_unite->previous->index >= min && first_unite->previous->index <= max)))
-	{
-		first_unite = first_unite->next;
-	}
-	ft_printf("first_unite->index = %d\nfirst_unite->position = %d\nmin = %d et max = %d\n", first_unite->index, first_unite->position, min, max);
-	faire_r_ou_rr(p, first_unite->position, PILE_B);
-}
-
-void	trie_huitieme(t_pile *p, int huitiemme, int unite)
-{
-	int max;
-	int min;
-
-	if (unite == 8)
-		max = p->len_total;
-	else
-		max = (huitiemme * unite);
-	min = (huitiemme * unite) - huitiemme;
-	go_to_unit(p, min, max);
-	while (p->b->index >= min && p->b->index <= max)
-		add_into_pa_general(p);
-	printf("FIN\n");
-}
-
-
-void	finish_short(t_pile *p, int huitiemme)
-{
-	trie_huitieme(p, huitiemme, 8);
-	trie_huitieme(p, huitiemme, 7);
-	// trie_huitieme(p, huitiemme, 6);
-	// trie_huitieme(p, huitiemme, 8);
-	// trie_huitieme(p, huitiemme, 8);
-	// trie_huitieme(p, huitiemme, 8);
-	// trie_huitieme(p, huitiemme, 8);
-	// trie_huitieme(p, huitiemme, 8);
-}
-
-void tout_dans_b(t_pile *p)
-{
-	while (p->len_a > 2)
-	{
-		if (p->a->index == 0 || p->a->index == p->len_total - 1)
-			use_instruction(1, p, 1, RA);
-		use_instruction(1, p, 1, PB);
-	}
-
-}
 
 // encore divise par 2 chaque mayon et faire mon sisteme de optimisation de trie
 
 void	trie_generale(t_pile *p)
 {
-	int	tour;
-
-	tour = 10;
 	trie_median_min(p, (p->len_total / 8) * 4);
 	trie_quart_min(p, (p->len_total / 8) * 2);
 	trie_median_max(p,(p->len_total / 8) * 4);
 	trie_quart_max(p, (p->len_total / 8));
-	amalgame_dans_a(p, p->len_total / 8);
-	// tout_dans_b(p);
-	// finish_short(p, p->len_total / 8);
-	// while (p->b)
-	// 	add_into_pa_general(p);
-	// faire_r_ou_rr(p, find_min(p->a)->position, PILE_A);
+	amalgame_dans_b(p, p->len_total / 8);
+	while (p->b)
+		add_into_pa_general(p);
+	faire_r_ou_rr(p, find_min(p->a)->position, PILE_A);
 	// affichage_struct_all(p);
 }
