@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 18:26:24 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 04:49:04 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/01 12:32:31 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 #include "../header/checker.h"
 
-static void	find_instruction(int instruction_id)
+static void	find_instruction(int instruction_id, int affichage, t_pile *pils)
 {
 	if (instruction_id == 0)
 		pa(pils, affichage);
@@ -41,12 +41,11 @@ static void	find_instruction(int instruction_id)
 
 void	use_instruction(int affichage, t_pile *pils, int nbr_instruction, ...)
 {
-	int		insruction;
 	va_list	all_instruction;
 
 	va_start(all_instruction, nbr_instruction);
 	while (nbr_instruction--)
-		find_instruction(va_arg(all_instruction, int));
+		find_instruction(va_arg(all_instruction, int), affichage, pils);
 	va_end(all_instruction);
 }
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trie_general.c                                     :+:      :+:    :+:   */
+/*   trie_general_o.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 16:16:33 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 18:56:01 by yzaoui           ###   ########.fr       */
+/*   Created: 2023/05/30 15:21:00 by yzaoui            #+#    #+#             */
+/*   Updated: 2023/06/01 16:16:46 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,115 +29,35 @@ void	trie_median_min(t_pile *p, int median)
 	}
 }
 
-void	trie_median_max(t_pile *p, int sezieme)
+void	trie_median_max(t_pile *p, int median)
 {
-	t_mayon	*last_ma;
-
-	last_ma = get_last_mayon(p->a);
-	while (p->a != last_ma)
-	{
-		if (p->a->index == 0 || p->a->index == p->len_total - 1)
-			use_instruction(TRUE, p, 1, RA);
-		else if (p->a->index <= sezieme * 12)
-		{
-			use_instruction(TRUE, p, 1, PB);
-			if (p->b->index >= sezieme * 10)
-				use_instruction(TRUE, p, 1, RB);
-		}
-		else
-			use_instruction(TRUE, p, 1, RA);
-	}
-	if (p->a->index && p->a->index <= sezieme * 12)
-	{
-		use_instruction(TRUE, p, 1, PB);
-		if (p->b->index <= sezieme * 10)
-			use_instruction(TRUE, p, 1, RB);
-	}
-// trie sexieme
-
-	while (p->b->index > sezieme * 8)
-	{
-		if (p->b->index >= sezieme * 9)
-			use_instruction(TRUE, p, 1, PA);
-		else
-			use_instruction(TRUE, p, 1, RB);
-	}
-	while (get_last_mayon(p->b)->index < sezieme * 10)
-			use_instruction(TRUE, p, 1, RRB);
-
-	while (p->a->index < sezieme * 11)
-		use_instruction(TRUE, p, 1, PB);
-///
-	while (get_last_mayon(p->b)->index > sezieme)
-	{
-		if (get_last_mayon(p->b)->index >= sezieme * 11)
-			use_instruction(TRUE, p, 2, RRB, PA);
-		else
-			use_instruction(TRUE, p, 1, RRB);
-	}
-	while (p->a->index < sezieme * 13)
-		use_instruction(TRUE, p, 1, PB);
-
-	// while (get_last_mayon(p->b)->index > sezieme)
-	// 	use_instruction(TRUE, p, 1, RRB);
-////
-	last_ma = get_last_mayon(p->a);
-	while (p->a != last_ma)
-	{
-		if (p->a->index == 0 || p->a->index == p->len_total - 1)
-			use_instruction(TRUE, p, 1, RA);
-		else if (p->a->index <= sezieme * 14)
-		{
-			use_instruction(TRUE, p, 1, PB);
-			if (p->b->index >= sezieme * 13)
-				use_instruction(TRUE, p, 1, RB);
-		}
-		else
-			use_instruction(TRUE, p, 1, RA);
-	}
-	if (p->a->index && p->a->index <= sezieme * 14)
-	{
-		use_instruction(TRUE, p, 1, PB);
-		if (p->b->index >= sezieme * 13)
-			use_instruction(TRUE, p, 1, RB);
-	}
-	while (get_last_mayon(p->b)->index > sezieme)
-		use_instruction(TRUE, p, 1, RRB);
-///
-	while (p->len_a > 2)
+	while (p->len_a != 2)
 	{
 		if (p->a->index == 0 || p->a->index == p->len_total - 1)
 			use_instruction(TRUE, p, 1, RA);
 		else
 			use_instruction(TRUE, p, 1, PB);
-		if (p->b->index >= sezieme * 15)
+		if (p->b->index >= median + (median / 2))
 			use_instruction(TRUE, p, 1, RB);
 	}
-	while (get_last_mayon(p->b)->index > sezieme)
-		use_instruction(TRUE, p, 1, RRB);
 }
 
-void	trie_siziem_mid(t_pile *p, int sezieme)
+void	trie_siziem_mid(t_pile *p, int huitieme)
 {
 	//trie le 3iem quartille
-	while (p->b->index >= (sezieme * 4))
+	while (p->b->index >= (huitieme * 2))
 	{
-		if (p->b->index >= (sezieme * 5))
-			use_instruction(TRUE, p, 1, PA);
-		else
+		if (p->b->index >= (huitieme * 3) - (huitieme / 2))
 			use_instruction(TRUE, p, 1, RB);
-	}
-	while (p->b->index <= (sezieme * 4))
-	{
-		if (p->b->index <= (sezieme * 3))
-			use_instruction(TRUE, p, 1, PA);
 		else
-			use_instruction(TRUE, p, 1, RB);
+			use_instruction(TRUE, p, 1, PA);
 	}
-	while (p->a->index <= (sezieme * 4))
-		use_instruction(TRUE, p, 2, PB, RB);
-	while (p->a->index > sezieme)
+	while (p->a->index >= huitieme * 2)
 		use_instruction(TRUE, p, 1, PB);
+	while (get_last_mayon(p->b)->index >= huitieme * 2)
+		use_instruction(TRUE, p, 1, RRB);
+
+
 }
 
 void	trie_siziem_extreme(t_pile *p, int huitieme)
@@ -187,61 +107,31 @@ void	trie_quart_min(t_pile *p, int quartille)
 		else
 			use_instruction(TRUE, p, 1, RB);
 	}
-	trie_siziem_mid(p, quartille / 4);
+	// trie_siziem_mid(p, quartille / 2);
 	trie_siziem_extreme(p, quartille / 2);
 
 }
 
-void	trie_quart_max(t_pile *p, int sezieme)
+void	trie_quart_max(t_pile *p, int huitiemme)
 {
-	while (p->b->index >= sezieme * 8)
+	if (!p->b)
+		return ;
+	while (p->b->index >= huitiemme * 4)
 	{
-		if (p->b->index >= sezieme * 10)
+		if (p->b->index < huitiemme * 5)
 			use_instruction(TRUE, p, 1, PA);
 		else
 			use_instruction(TRUE, p, 1, RB);
 	}
-	while (get_last_mayon(p->b)->index <= sezieme * 12)
-		use_instruction(TRUE, p, 1, RRB);
-	while (p->len_a > 2)
+	while (p->b->index >= huitiemme * 4)
 	{
-		if (!p->a->index || p->a->index == p->len_total - 1)
-			use_instruction(TRUE, p, 1, RA);
+		if (p->b->index >= huitiemme * 7)
+			use_instruction(TRUE, p, 1, PA);
 		else
-		{
-			if (p->a->index >= sezieme * 11)
-				use_instruction(TRUE, p, 2, PB, RB);
-			else
-				use_instruction(TRUE, p, 1, PB);
-		}
+			use_instruction(TRUE, p, 1, RRB);
 	}
-	//
-	while (get_last_mayon(p->b)->index <= sezieme * 12)
-		use_instruction(TRUE, p, 1, RRB);
-
-	while (get_last_mayon(p->b)->index >= sezieme)
-	{
-			if (get_last_mayon(p->b)->index >= sezieme * 14)
-				use_instruction(TRUE, p, 2, RRB, PA);
-			else
-				use_instruction(TRUE, p, 1, RRB);
-	}
-
-	while (p->len_a > 2)
-	{
-		if (!p->a->index || p->a->index == p->len_total - 1)
-			use_instruction(TRUE, p, 1, RA);
-		else
-		{
-			if (p->a->index >= sezieme * 15)
-				use_instruction(TRUE, p, 2, PB, RB);
-			else
-				use_instruction(TRUE, p, 1, PB);
-		}
-	}
-	while (get_last_mayon(p->b)->index > sezieme)
-		use_instruction(TRUE, p, 1, RRB);
-
+	if (p->b->index < huitiemme * 4)
+		use_instruction(TRUE, p, 1, RB);
 }
 void	use_swap(t_pile *p, int instruction)
 {
@@ -336,13 +226,12 @@ void trie(t_pile *p)
 
 void	trie_rapide(t_pile *p)
 {
-	int	sezieme;
-
-	sezieme = p->len_total / 16;
-	trie_median_min(p, sezieme * 8);
-	trie_quart_min(p, sezieme * 4);
-	trie_median_max(p, sezieme);
-	while (p->b)
-		trie(p);
-	faire_r_ou_rr(p, find_min(p->a)->position, PILE_A);
+	trie_median_min(p, (p->len_total / 8) * 4);
+	trie_quart_min(p, (p->len_total / 8) * 2);
+	trie_median_max(p,(p->len_total / 8) * 4);
+	trie_quart_max(p, (p->len_total / 8));
+	// amalgame_dans_b(p, p->len_total / 8);
+	// while (p->b)
+	// 	trie(p);
+	// faire_r_ou_rr(p, find_min(p->a)->position, PILE_A);
 }
