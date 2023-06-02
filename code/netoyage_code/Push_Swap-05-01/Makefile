@@ -6,9 +6,10 @@
 #    By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/27 16:03:26 by yzaoui            #+#    #+#              #
-#    Updated: 2023/06/01 03:59:52 by yatsu            ###   ########.fr        #
+#    Updated: 2023/06/02 02:17:02 by yatsu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRC_MAIN = ./srcs/main.c
 
@@ -16,9 +17,11 @@ DIR_SRC =		./srcs/
 SRC_FILES =		parsing.c
 
 DIR_TRIE =		./srcs/trie/
-TRIE_FILES =	trie_moyen.c		\
-				trie_de_3.c			\
-				trie_general.c		\
+TRIE_FILES =	trie_moyen.c				\
+				trie_de_3.c					\
+				trie_general.c				\
+				trie_mediane_inferieur.c	\
+				trie_mediane_superrieur.c	\
 				verif_trie.c
 
 DIR_UTILS =		./utils/

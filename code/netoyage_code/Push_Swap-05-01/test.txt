@@ -1,0 +1,1 @@
+commande = seq 1 100 | shuf | sort -u >> test.txt
