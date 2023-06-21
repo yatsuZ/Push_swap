@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 19:07:00 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 03:37:03 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/04 00:16:31 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,17 @@ t_mayon	*find_most_close(t_mayon *tete_a, t_mayon *mayon_b)
 		index = index->next;
 	}
 	return (res);
+}
+
+int	init_struct(t_pile **pils, int argc, char **argv)
+{
+	t_mayon	*a;
+
+	a = parsing(0, argc, argv, NULL);
+	if (a == NULL)
+		return (1);
+	(*pils) = creat_struct(a);
+	if ((*pils) == NULL)
+		return (1);
+	return (0);
 }

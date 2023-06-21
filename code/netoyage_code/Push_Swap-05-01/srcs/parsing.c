@@ -6,22 +6,12 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:59:38 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 03:54:20 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/04 00:09:03 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 #include "../header/checker.h"
-
-static int	verif_overflow(long val_long)
-{
-	int	val_int;
-
-	val_int = (int) val_long;
-	if (val_int != val_long)
-		return (2);
-	return (0);
-}
 
 static int	ft_atoi_verif(char *nptr)
 {
@@ -45,16 +35,16 @@ static int	ft_atoi_verif(char *nptr)
 	{
 		nbr = nbr * 10;
 		nbr += nptr[i] - '0';
+		if (nbr > 2147483647 || nbr * signe < -2147483648)
+			return (2);
 		i++;
 	}
-	if (nptr[i] != '\0')
-		return (1);
-	return (verif_overflow(signe * nbr));
+	return (nptr[i] != '\0' || !i);
 }
 
 static int	error_parsing(char *arg, int val, t_mayon *last_m, int index)
 {
-	if (ft_atoi_verif(arg) == 1)
+	if (ft_atoi_verif(arg) >= 1)
 	{
 		write(2, "Error\n", 6);
 		return (1);
@@ -77,8 +67,6 @@ t_mayon	*parsing(int z, int argc, char **argv, t_mayon *tete)
 	t_mayon	*last_m;
 	int		new_val;
 
-	if (argc == 1)
-		return (0);
 	last_m = 0;
 	while ((z + 1) < argc)
 	{

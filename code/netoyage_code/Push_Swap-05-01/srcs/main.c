@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:29:29 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 12:30:37 by yzaoui           ###   ########.fr       */
+/*   Updated: 2023/06/04 00:16:23 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
-
-int	init_struct(t_pile **pils, int argc, char **argv)
-{
-	t_mayon	*a;
-
-	a = parsing(0, argc, argv, NULL);
-	if (a == NULL)
-		return (1);
-	(*pils) = creat_struct(a);
-	if ((*pils) == NULL)
-		return (1);
-	return (0);
-}
 
 static void	trie(t_pile *pils)
 {
@@ -42,6 +29,8 @@ int	main(int argc, char **argv)
 {
 	t_pile	*pils;
 
+	if (argc == 1)
+		return (0);
 	if (init_struct(&pils, argc, argv))
 		return (1);
 	trie(pils);

@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:43:17 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 04:23:39 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/04 00:36:19 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list_instruction	*parsing_instruction(void)
 	t_node_instruction	*index;
 	char				*res;
 
-	res = get_next_line(1);
+	res = get_next_line(0);
 	tete = NULL;
 	index = NULL;
 	while (res)
@@ -35,7 +35,7 @@ t_list_instruction	*parsing_instruction(void)
 		}
 		if (!index)
 			return (free_node_instruction(&tete), free(res), NULL);
-		res = get_next_line(1);
+		res = get_next_line(0);
 	}
 	return (free(res), creat_list_instruction(tete));
 }

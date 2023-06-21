@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 01:12:18 by yatsu             #+#    #+#             */
-/*   Updated: 2023/06/02 02:06:36 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/21 14:43:25 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	trie_siziem_min_mid(t_pile *p, int sezieme)
 	}
 	while (p->a->index <= (sezieme * 4))
 		use_instruction(TRUE, p, 2, PB, RB);
-	while (p->a->index >= sezieme)
+	while (p->a->index > sezieme * 2)
 		use_instruction(TRUE, p, 1, PB);
 }
 

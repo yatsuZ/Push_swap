@@ -6,7 +6,7 @@
 /*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:34:03 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 04:54:43 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/04 00:16:03 by yatsu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int	main(int argc, char **argv)
 	exec_instruction(all_instruction->all_instruction, pils);
 	free_list_instruction(&all_instruction);
 	free_struct_pile(&pils);
-	a = NULL;
 	return (0);
 }
