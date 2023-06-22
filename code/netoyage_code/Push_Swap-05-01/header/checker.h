@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:34:00 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 04:52:53 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/22 16:33:44 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void				use_instruction(int affichage, t_pile *pils, \
 void				exec_instruction(t_node_instruction *instruction, \
 					t_pile *pils);
 int					init_struct(t_pile **pils, int argc, char **argv);
+char				*get_instruction(int instruction);
 
 #endif

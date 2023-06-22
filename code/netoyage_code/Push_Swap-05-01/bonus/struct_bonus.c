@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:52:42 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/01 04:24:54 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/22 16:34:09 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,20 +94,6 @@ t_list_instruction	*free_list_instruction(t_list_instruction **tete)
 	return (NULL);
 }
 
-static const char	*g_instruction[] = {
-	"pa\n",
-	"pb\n",
-	"rra\n",
-	"rrb\n",
-	"rrr\n",
-	"ra\n",
-	"rb\n",
-	"rr\n",
-	"sa\n",
-	"sb\n",
-	"ss\n",
-};
-
 int	read_param(t_node_instruction *noeud)
 {
 	int	len_param;
@@ -121,12 +107,12 @@ int	read_param(t_node_instruction *noeud)
 	{
 		if (len_param == 4 && (index >= 2 && index <= 4))
 		{
-			if (!ft_strncmp(g_instruction[index], noeud->param, 5))
+			if (!ft_strncmp(get_instruction(index), noeud->param, 5))
 				return (noeud->instruction = index, 0);
 		}
 		else if (len_param == 3)
 		{
-			if (!ft_strncmp(g_instruction[index], noeud->param, 4))
+			if (!ft_strncmp(get_instruction(index), noeud->param, 4))
 				return (noeud->instruction = index, 0);
 		}
 		index++;

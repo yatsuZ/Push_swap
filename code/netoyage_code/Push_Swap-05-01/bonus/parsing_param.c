@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_param.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yatsu <yatsu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yzaoui <yzaoui@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:43:17 by yzaoui            #+#    #+#             */
-/*   Updated: 2023/06/04 00:36:19 by yatsu            ###   ########.fr       */
+/*   Updated: 2023/06/22 16:34:32 by yzaoui           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,31 @@ void	exec_instruction(t_node_instruction *instruction, t_pile *pils)
 		ft_printf("KO\n");
 	else
 		ft_printf("OK\n");
+}
+
+char	*get_instruction(int instruction_id)
+{
+	if (instruction_id == 0)
+		return ("pa\n");
+	else if (instruction_id == 1)
+		return ("pb\n");
+	else if (instruction_id == 2)
+		return ("rra\n");
+	else if (instruction_id == 3)
+		return ("rrb\n");
+	else if (instruction_id == 4)
+		return ("rrr\n");
+	else if (instruction_id == 5)
+		return ("ra\n");
+	else if (instruction_id == 6)
+		return ("rb\n");
+	else if (instruction_id == 7)
+		return ("rr\n");
+	else if (instruction_id == 8)
+		return ("sa\n");
+	else if (instruction_id == 9)
+		return ("sb\n");
+	else if (instruction_id == 10)
+		return ("ss\n");
+	return (NULL);
 }
