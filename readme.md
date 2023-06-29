@@ -12,7 +12,7 @@ Donc c'est un  projet basé sur l'algorythme (c'est ce que j'aime dans le code :
 
 ## Status
 
-Pas encore notée.
+J'ai fais ma premiere correction à 114% mais je repasse mon pushswap.
 
 ## Comment ai-je procedé ?
 
@@ -20,6 +20,10 @@ Si vous voulez savoir comment j'ai crée push swap.
 regardez ce fichier md -> [Creation du push swap de yassine](Creation_du_projet.md).
 
 ## Règle Push_Swap et classement
+
+Si vous voulez savoir comment marche le systéme de notation.
+regardez ce fichier md -> [Notation Push swap](Notation_Push_swap.md).
+
 
 Le programme n'est autorisé à travailler qu'avec deux piles,
 la pile A et la pile B.
@@ -67,120 +71,30 @@ La note dépend de l'efficacité du processus de tri du programme.
 
 ## Explication Bonus
 
-Le bonus consiste à faire son propre cheker comme "checker_linux" ou
-"checker_Mac".
-Il consistera à verifier que la liste d'instruction permettra de bien trier
-la pile.
+Le bonus consiste à faire son propre cheker.
+Il consistera à verifier que la liste d'instruction et verifier que les liste dinstruction trie
+bien la pile.
 
-## **!! PAS ENCORE FINI DONC LA DEUXIEME PARTIE PAS ENCORE VALIDE !!**
+exemple :
 
+```bash
+ARG="(liste de nombres)"; ./checker $ARG
+(Vous écrivez votre liste d'instructions, puis vous appuyez sur Ctrl+D lorsque vous avez terminé. Ensuite, le programme "checker" vous retournera quelque chose.)
+```
+
+```bash
+Mais cela devrait aussi fonctionner comme ceci :
+
+ARG="(liste de nombres)"; ./push_swap $ARG | ./checker $ARG
+````
 ----------------------------------------
 
 ## Installation
 
-1. Clonez le dépôt Git sur votre ordinateur :
-
-    ```bash
-    git clone https://github.com/yatsuZ/PUSH_SWAP.git
-    ```
-
-2. Allez dans le dossier du projet :
-
-    ```bash
-    cd PUSH_SWAP/FIN
-    ```
-
-3. Compilez le programme :
-
-    ```bash
-    make
-    ```
-
-## Utilisation
-
-Le programme prend en entrée une liste d'entiers sans doublons, séparés par des espaces.
-les empile sur la pile A.
-
-Vous pouvez utiliser la commande suivante pour lancer le programme :
-
-```bash
-./push_swap ["liste d'entiers"]
-```
-
-Par exemple :
-
-```bash
-./push_swap 3 1 4 2
-```
-
-OU
-
-```bash
-./push_swap "3 1 4 2"
-```
-
-Le programme affichera une série d'opérations à effectuer pour trier la pile A.
-Vous pouvez également utiliser la commande suivante pour
-visualiser les opérations en temps réel :
-
-```bash
-./push_swap ["liste d'entiers"] | ./checker ["liste d'entiers"]
-```
-
-## Fonctionnalités
-
-Le projet comprend les fonctionnalités suivantes :
-
-- Tri rapide et efficace de la pile A en utilisant un algorithme personnalisé.
-- Affichage des opérations à effectuer pour trier la pile A.
-- Vérification en temps réel de la validité des opérations pour trier la pile A.
-- Gestion des erreurs et des cas spéciaux.
-
-## Exemple de résultat
-
-Voici un exemple de résultat pour la liste d'entiers "3 1 4 2" :
-
-```bash
-pb
-sa
-pb
-pb
-sa
-pa
-pa
-pa
-```
-
-Ceci signifie que les opérations suivantes doivent être effectuées
-pour trier la pile A :
-
-- Empiler le premier élément sur la pile B (pb).
-- Échanger les deux premiers éléments de la pile A (sa).
-- Empiler les deux premiers éléments de la pile A sur la pile B (pb pb).
-- Échanger les deux premiers éléments de la pile A (sa).
-- Replacer les éléments de la pile B sur la pile A dans
-l'ordre croissant (pa pa pa).
-
-## Avoir un visiluateur
-
-voir ce repos si vous shouaiter avoir une interface visuel :
-[visualisation](https://github.com/o-reo/push_swap_visualizer).
+Si vous voulez savoir comment utilise ou tester mon projet.
+regardez ce fichier md -> [Tester Push swap](Tester_Push_swap.md).
 
 ----------------------------------------
-
-## Chose aprise
-
-dans le makefile -s permet de ne pas afficher l'affichage de make .
-
--g3 permet davoir le numero des ligne pour valgrind lldb.
-
--llbd qui est un debeuguer qui permet de voir son code s'executer ligne par ligne.
-
-## Merci
-
-Je tiens remercie mex camarade qui m'ont aide pour ce projet donc Merci
-
-- **prenom** pour **en quoi cette personne ma aide.**
 
 ## Auteur
 
