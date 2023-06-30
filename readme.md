@@ -46,8 +46,9 @@ exemple :
 
 ```bash
 ARG="(liste de nombres)"; ./checker $ARG
-(Vous écrivez votre liste d'instructions, puis vous appuyez sur Ctrl+D lorsque vous avez terminé. Ensuite, le programme "checker" vous retournera quelque chose.)
 ```
+(Vous écrivez votre liste d'instructions, puis vous appuyez sur Ctrl+D lorsque vous avez terminé. Ensuite, le programme "checker" vous retournera quelque chose.)
+
 
 ```bash
 Mais cela devrait aussi fonctionner comme ceci :
