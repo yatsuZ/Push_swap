@@ -14,16 +14,7 @@ Donc c'est un  projet basé sur l'algorythme (c'est ce que j'aime dans le code :
 
 J'ai fais ma premiere correction à 114% mais je repasse mon pushswap.
 
-## Comment ai-je procedé ?
-
-Si vous voulez savoir comment j'ai crée push swap.
-regardez ce fichier md -> [Creation du push swap de yassine](Creation_du_projet.md).
-
-## Règle Push_Swap et classement
-
-Si vous voulez savoir comment marche le systéme de notation.
-regardez ce fichier md -> [Notation Push swap](Notation_Push_swap.md).
-
+## Règle Push_Swap
 
 Le programme n'est autorisé à travailler qu'avec deux piles,
 la pile A et la pile B.
@@ -45,30 +36,6 @@ Les actions possibles sont :
 | `rrb` | reverse rotate b                    | rotation inverse b                      | Décale d’une position vers le bas tous les élements de la pile b. Le dernier élément devient le premier.                 |
 | `rrr` | reverse rotate a + reverse rotate b | rotation inverse a + rotation inverse b | rra et rrb en même temps.                                                                                                |
 
-La note dépend de l'efficacité du processus de tri du programme.
-
-- Tri 3 valeurs : pas plus de 3 actions.
-- Tri 5 valeurs : pas plus de 12 actions.
-- Tri de 100 valeurs : notation de 1 à 5 points dépend du nombre d'actions.
-
-| Nombre de point | Score à avoir        |
-| --------------- | -------------------- |
-| 5 point         | moin de   700 action |
-| 4 point         | moin de   900 action |
-| 3 point         | moin de 1 100 action |
-| 2 point         | moin de 1 300 action |
-| 1 point         | moin de 1 500 action |
-
-- Tri de 500 valeurs : notation de 1 à 5 points dépend du nombre d'actions.
-
-| Nombre de point | Score à avoir         |
-| --------------- | --------------------- |
-| 5 point         | moin de  5 500 action |
-| 4 point         | moin de  7 000 action |
-| 3 point         | moin de  8 500 action |
-| 2 point         | moin de 10 000 action |
-| 1 point         | moin de 11 500 action |
-
 ## Explication Bonus
 
 Le bonus consiste à faire son propre cheker.
@@ -86,10 +53,15 @@ ARG="(liste de nombres)"; ./checker $ARG
 Mais cela devrait aussi fonctionner comme ceci :
 
 ARG="(liste de nombres)"; ./push_swap $ARG | ./checker $ARG
-````
-----------------------------------------
+```
 
-## Installation
+## Notation
+
+Si vous voulez savoir comment marche le systéme de notation.
+regardez ce fichier md -> [Notation Push swap](Notation_Push_swap.md).
+
+
+## Tester mon Push
 
 Si vous voulez savoir comment utilise ou tester mon projet.
 regardez ce fichier md -> [Tester Push swap](Tester_Push_swap.md).
@@ -107,6 +79,4 @@ Ce projet a été réalisé par MOI !!! :smiley:
 | Pseudo😁      | Yatsu                                                                |
 | Login 42🏫    | Yzaoui                                                               |
 | E-mail📬      | y.zaoui.pro@gmail.com                                                |
-| E-mail42📩    | yzaoui@student.42.fr                                                 |
-| Linkdin👨‍💻     | [Yassine Zaoui](https://www.linkedin.com/in/yassine-zaoui-23b005229/)|
 | Instagram📸   | [@yatsu__officiel](https://www.instagram.com/yatsu__officiel/)       |
